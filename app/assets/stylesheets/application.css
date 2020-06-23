@@ -24,3 +24,131 @@ body{
     padding:0;
     font-family: Yuppy SC;
 }
+
+
+/* ヘッダーCSS */
+
+header{
+    position: absolute;
+    top:0;
+    left:0;
+    padding:0;
+    position: fixed;
+    z-index: 10;
+    background:#524E45;
+    width:100%; 
+    box-sizing:border-box;
+    z-index: 2;
+    border-bottom: 0.8px solid #727069;
+
+}
+
+
+header .icon{
+    color: #fff;
+    line-height: 50px; 
+    height:50px;
+    font-size:24px;
+    float:left;
+    margin-left: 20px;
+    font-weight: bold;
+    letter-spacing: 10px;
+} 
+
+.user-name{
+    float: left;
+    color: #fff;
+    margin:16px 0px 0px 16px;
+    letter-spacing: 3px;
+}
+
+header nav{
+    float:right;
+}
+
+header nav ul{
+    margin:0;
+    padding:0;
+    display: flex;
+}
+
+header nav ul li{
+    list-style: none;
+    margin: 0px;
+    border-left:solid 0.1px rgba(212, 193, 178, 0.5);
+}
+
+header nav ul li a{
+    height:50px;
+    line-height:50px;
+    padding:0 20px;
+    color:rgb(255, 255, 255);
+    text-decoration:none;
+    display:block; 
+}
+
+
+header nav ul li a:hover{
+    color:rgb(0, 0, 0);
+    background:#ffffff;
+    transition: 0.5s;
+}
+
+/* 理想は現在いるページリンクを常時hoverのようにする */
+
+/* header nav ul li a.active{
+    color:#000;
+    background:#fff;
+    transition: 0.5s;
+}  */
+
+.menu-toggle{
+    color:#fff;
+    float:right;
+    line-height:50px;
+    font-size:24px;
+    cursor: pointer;
+    display: none;
+}
+
+/* ハンバーガーメニュー開始  */
+
+@media (max-width:991px){
+    header{
+        padding: 0 20px;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+    header nav.active{
+        left:0;
+    }
+
+    header nav{
+        position: absolute;
+        width:100%;
+        height:calc(100vh-50px);
+        background: #ffffff;
+        color:rgb(0, 0, 0);
+        top:50px;
+        left:-100%;
+        transition:0.5s; 
+    }
+
+    header nav ul{
+        display:block;
+        text-align:center;
+    }
+
+    header nav ul li a{
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+        color:black;
+    }
+}
+
+/* ハンバーガーメニュー終了  */
+
+/* ヘッダーCSS終了 */
+
+
