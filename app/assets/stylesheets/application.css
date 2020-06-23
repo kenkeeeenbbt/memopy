@@ -145,6 +145,11 @@ header nav ul li a:hover{
         border-bottom: 1px solid rgba(0, 0, 0, .2);
         color:black;
     }
+    header nav ul li a:hover{
+        background:#524E45;;
+        color: white;
+        transition: 0.3s;
+    }
 }
 
 /* ハンバーガーメニュー終了  */
