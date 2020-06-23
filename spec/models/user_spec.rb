@@ -23,17 +23,17 @@ RSpec.describe User, type: :model do
 
     describe '存在性の検証' do
         it '名前がない場合、無効であること' do
-            @user.name = ' '
+            @user.name = ''
             expect(@user).not_to be_valid
         end
     
         it 'メールアドレスがない場合、無効であること' do
-            @user.email = ' '
+            @user.email = ''
             expect(@user).not_to be_valid
         end
 
         it 'パスワードがない場合、無効であること' do
-            @user.password = @user.password_confirmation = ' ' * 8
+            @user.password = @user.password_confirmation = ''
             expect(@user).not_to be_valid
         end
     end
