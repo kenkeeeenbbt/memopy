@@ -146,7 +146,7 @@ header nav ul li a:hover{
         color:black;
     }
     header nav ul li a:hover{
-        background:#524E45;;
+        background:#524E45;
         color: white;
         transition: 0.3s;
     }
@@ -155,5 +155,73 @@ header nav ul li a:hover{
 /* ハンバーガーメニュー終了  */
 
 /* ヘッダーCSS終了 */
+
+
+
+/* フッターCSS開始 */
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width:100%;
+    background:#524E45;
+}
+
+
+footer nav ul{
+    margin:0;
+    padding:0;
+    display: flex;
+    justify-content: center;
+}
+
+footer nav ul li{
+    list-style: none;
+    padding: 16px 32px 0 32px;
+}
+
+footer nav a{
+color: white;
+opacity: 0.7;
+text-decoration:none;
+font-family: Yuppy SC;
+}
+
+footer nav a:hover{
+    opacity: 1;
+
+}
+
+footer span p{
+    color:white;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 16px;
+}
+
+
+/* フッターレスポンシブ */
+@media (max-width:704px){
+    footer nav ul{
+        margin:0;
+        padding:0;
+        display: flex;
+        justify-content: center;
+        flex-wrap:wrap;
+    }
+}    
+
+/* フッターCSS終了 */
+
+
+
+
+
+
+
+
+
+
+
 
 
