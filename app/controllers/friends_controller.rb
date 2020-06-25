@@ -13,7 +13,7 @@ class FriendsController < ApplicationController
   private
 
     def friend_params
-      params.require(:friend).permit(:name)
+      params.require(:friend).permit(:name, :user_id)
     end
 
     # 現在ログイン中のユーザーを返す (いる場合)
