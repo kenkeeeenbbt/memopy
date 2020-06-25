@@ -1,27 +1,38 @@
-
-  <% provide(:title, 'Sign up') %>
+ <% provide(:title, 'Sign up') %>
   <div class="inner">
-  <h1>新規登録</h1>
-  
-    <h2>さっそく始めてみよう！</h2>
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <%= form_with(model: @user) do |f| %>
-    
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-    
-          <%= f.label :email %>
-          <%= f.email_field :email %>
-    
-          <%= f.label :password %>
-          <%= f.password_field :password %>
-    
-          <%= f.label :password_confirmation, "Confirmation" %>
-          <%= f.password_field :password_confirmation %>
-    
-          <%= f.submit "Create my account", class: "btn btn-cus" %>
-        <% end %>
-      </div>
+  <div class="form_wrapper">
+    <div class="title-area">
+      <h2 class="section_title">新規登録</h2>
+        <h3 class="sub-title">Memopyをさっそく始めてみよう！</h3>
     </div>
- </div>
+      
+      
+          <%= form_with(model: @user) do |f| %>
+      <div class="input_items">
+   <div class="input_item">
+              <%= f.label :"お名前" %>
+              <%= f.text_field :name %>
+   </div>
+      
+           
+              <div class="input_item">
+                <%= f.label :"メールアドレス" %>
+                <%= f.email_field :email %>
+              </div class="input_item">
+        
+              <div class="input_item">
+                <%= f.label :"パスワード" %>
+                <%= f.password_field :password %>
+              </div class="input_item">
+        
+              <div class="input_item">
+                <%= f.label :password_confirmation, "パスワード（確認）" %>
+                <%= f.password_field :password_confirmation %>
+              </div class="input_item">
+           </div>
+      
+            <%= f.submit "登録する", class: "btn btn-primary btn-cus" %>
+          <% end %>
+   </div>
+  </div>
+ 
