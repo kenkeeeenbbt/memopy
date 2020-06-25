@@ -1,4 +1,4 @@
-/*
+            /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -13,215 +13,298 @@
  *= require_tree .
  *= require_self
  */
-
- /* 全体共通部分 */
-
-
-/* リセットCSS */
-
-body{
-    margin:0;
-    padding:0;
-    font-family: Yuppy SC;
-}
-
-
-/* ヘッダーCSS */
-
-header{
-    position: absolute;
-    top:0;
-    left:0;
-    padding:0;
-    position: fixed;
-    z-index: 10;
-    background:#524E45;
-    width:100%; 
-    box-sizing:border-box;
-    z-index: 2;
-    border-bottom: 0.8px solid #727069;
-
-}
-
-
-header .icon{
-    color: #fff;
-    line-height: 50px; 
-    height:50px;
-    font-size:24px;
-    float:left;
-    margin-left: 20px;
-    font-weight: bold;
-    letter-spacing: 10px;
-} 
-
-.user-name{
-    float: left;
-    color: #fff;
-    margin:16px 0px 0px 16px;
-    letter-spacing: 3px;
-}
-
-header nav{
-    float:right;
-}
-
-header nav ul{
-    margin:0;
-    padding:0;
-    display: flex;
-}
-
-header nav ul li{
-    list-style: none;
-    margin: 0px;
-    border-left:solid 0.1px rgba(212, 193, 178, 0.5);
-}
-
-header nav ul li a{
-    height:50px;
-    line-height:50px;
-    padding:0 20px;
-    color:rgb(255, 255, 255);
-    text-decoration:none;
-    display:block; 
-}
-
-
-header nav ul li a:hover{
-    color:rgb(0, 0, 0);
-    background:#ffffff;
-    transition: 0.5s;
-}
-
-/* 理想は現在いるページリンクを常時hoverのようにする */
-
-/* header nav ul li a.active{
+            /* 全体共通部分 */
+            /* リセットCSS */
+            
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Yuppy SC;
+            }
+            /* ヘッダーCSS */
+            
+            header {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 0;
+                position: fixed;
+                z-index: 10;
+                background: #524E45;
+                width: 100%;
+                box-sizing: border-box;
+                z-index: 2;
+                border-bottom: 0.8px solid #727069;
+            }
+            
+            header .icon {
+                color: #fff;
+                line-height: 50px;
+                height: 50px;
+                font-size: 24px;
+                float: left;
+                margin-left: 20px;
+                font-weight: bold;
+                letter-spacing: 10px;
+            }
+            
+            .user-name {
+                float: left;
+                color: #fff;
+                margin: 16px 0px 0px 16px;
+                letter-spacing: 3px;
+            }
+            
+            header nav {
+                float: right;
+            }
+            
+            header nav ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+            }
+            
+            header nav ul li {
+                list-style: none;
+                margin: 0px;
+                border-left: solid 0.1px rgba(212, 193, 178, 0.5);
+            }
+            
+            header nav ul li a {
+                height: 50px;
+                line-height: 50px;
+                padding: 0 20px;
+                color: rgb(255, 255, 255);
+                text-decoration: none;
+                display: block;
+            }
+            
+            header nav ul li a:hover {
+                color: rgb(0, 0, 0);
+                background: #ffffff;
+                transition: 0.5s;
+            }
+            /* 理想は現在いるページリンクを常時hoverのようにする */
+            /* header nav ul li a.active{
     color:#000;
     background:#fff;
     transition: 0.5s;
 }  */
-
-.menu-toggle{
-    color:#fff;
-    float:right;
-    line-height:50px;
-    font-size:24px;
-    cursor: pointer;
-    display: none;
-}
-
-/* ハンバーガーメニュー開始  */
-
-@media (max-width:991px){
-    header{
-        padding: 0 20px;
-    }
-
-    .menu-toggle{
-        display: block;
-    }
-    header nav.active{
-        left:0;
-    }
-
-    header nav{
-        position: absolute;
-        width:100%;
-        height:calc(100vh-50px);
-        background: #ffffff;
-        color:rgb(0, 0, 0);
-        top:50px;
-        left:-100%;
-        transition:0.5s; 
-    }
-
-    header nav ul{
-        display:block;
-        text-align:center;
-    }
-
-    header nav ul li a{
-        border-bottom: 1px solid rgba(0, 0, 0, .2);
-        color:black;
-    }
-    header nav ul li a:hover{
-        background:#524E45;
-        color: white;
-        transition: 0.3s;
-    }
-}
-
-/* ハンバーガーメニュー終了  */
-
-/* ヘッダーCSS終了 */
-
-
-
-/* フッターCSS開始 */
-
-footer{
-    position: fixed;
-    bottom: 0;
-    width:100%;
-    background:#524E45;
-}
-
-
-footer nav ul{
-    margin:0;
-    padding:0;
-    display: flex;
-    justify-content: center;
-}
-
-footer nav ul li{
-    list-style: none;
-    padding: 16px 32px 0 32px;
-}
-
-footer nav a{
-color: white;
-opacity: 0.7;
-text-decoration:none;
-font-family: Yuppy SC;
-}
-
-footer nav a:hover{
-    opacity: 1;
-
-}
-
-footer span p{
-    color:white;
-    text-align: center;
-    font-size: 12px;
-    margin-top: 16px;
-}
-
-
-/* フッターレスポンシブ */
-@media (max-width:704px){
-    footer nav ul{
-        margin:0;
-        padding:0;
-        display: flex;
-        justify-content: center;
-        flex-wrap:wrap;
-    }
-}    
-
-/* フッターCSS終了 */
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
+            .menu-toggle {
+                color: #fff;
+                float: right;
+                line-height: 50px;
+                font-size: 24px;
+                cursor: pointer;
+                display: none;
+            }
+            /* ハンバーガーメニュー開始  */
+            
+            @media (max-width:991px) {
+                header {
+                    padding: 0 20px;
+                }
+                .menu-toggle {
+                    display: block;
+                }
+                header nav.active {
+                    left: 0;
+                }
+                header nav {
+                    position: absolute;
+                    width: 100%;
+                    height: calc(100vh-50px);
+                    background: #ffffff;
+                    color: rgb(0, 0, 0);
+                    top: 50px;
+                    left: -100%;
+                    transition: 0.5s;
+                }
+                header nav ul {
+                    display: block;
+                    text-align: center;
+                }
+                header nav ul li a {
+                    border-bottom: 1px solid rgba(0, 0, 0, .2);
+                    color: black;
+                }
+                header nav ul li a:hover {
+                    background: #524E45;
+                    color: white;
+                    transition: 0.3s;
+                }
+            }
+            /* ハンバーガーメニュー終了  */
+            /* ヘッダーCSS終了 */
+            /* フッターCSS開始 */
+            
+            footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                background: #524E45;
+            }
+            
+            footer nav ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+            }
+            
+            footer nav ul li {
+                list-style: none;
+                padding: 16px 32px 0 32px;
+            }
+            
+            footer nav a {
+                color: white;
+                opacity: 0.7;
+                text-decoration: none;
+                font-family: Yuppy SC;
+            }
+            
+            footer nav a:hover {
+                opacity: 1;
+            }
+            
+            footer span p {
+                color: white;
+                text-align: center;
+                font-size: 12px;
+                margin-top: 16px;
+            }
+            /* フッターレスポンシブ */
+            
+            @media (max-width:704px) {
+                footer nav ul {
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+            }
+            /* フッターCSS終了 */
+            /*-------たかひろ作業中--------*/
+            /* ボタン */
+            /* ボタン ログイン, 新規登録 */
+            
+            .btn-cus {
+                display: inline-block;
+                padding: .6em 2em;
+                margin: 0 0 1em;
+                background-image: none;
+                background-color: #5369e2;
+                color: #fff;
+                text-decoration: none;
+                border: none;
+                border-radius: 0;
+                cursor: pointer;
+                -webkit-appearance: none;
+                box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .2);
+                position: relative;
+            }
+            
+            .btn-cus:hover,
+            .btn-cus:focus {
+                outline: none;
+            }
+            
+            .btn-cus::-moz-foucus-inner {
+                padding: 0;
+                border: none;
+            }
+            /* 入力フォーム */
+            /* 入力フォーム ラベル*/
+            
+            label {
+                font-size: 16px;
+            }
+            /* 入力フォーム テキスト用*/
+            
+            input {
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                appearance: none;
+                background-color: transparent;
+                background-image: none;
+                border: 1px solid rgba(0, 0, 0, 0.16);
+                border-radius: 0;
+                color: inherit;
+                font-family: inherit;
+                font-size: 1em;
+                padding: 0.4em 0.8em;
+                width: 100%;
+            }
+            
+            input:focus {
+                border: 1px solid rgba(0, 0, 0, 0.32);
+                box-shadow: none;
+                outline: none;
+            }
+            /*  入力フォーム テキストエリア*/
+            
+            .textarea-text {
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                appearance: none;
+                background-color: transparent;
+                background-image: none;
+                border: 1px solid rgba(0, 0, 0, 0.16);
+                border-radius: 5px;
+                color: inherit;
+                font-family: inherit;
+                font-size: 1em;
+                height: 100px;
+                padding: 0.4em 0.8em;
+                width: 100%;
+            }
+            
+            .textarea-text:focus {
+                border: 1px solid rgba(0, 0, 0, 0.32);
+                box-shadow: none;
+                outline: none;
+            }
+            /* inner */
+            
+            .inner {
+                width: 750px;
+                /*max-width: 100%;*/
+                margin: 0 auto;
+                padding: 20px;
+            }
+            
+            @media (max-width: 991px) {
+                .inner {
+                    width: 100%;
+                }
+            }
+            /* メモ形 wrapper */
+            
+            .form_area_memo {
+                margin: 0 auto;
+                width: 580px;
+                height: 1200px;
+                position: relative;
+                background: hsla(60, 20%, 53%, 0.212);
+                box-shadow: 0px 0px 0px 5px #afae9a36;
+                border: 2px white;
+                padding: 0.2em 0.5em;
+                color: #454545;
+                margin: 0 auto;
+            }
+            
+            .form_area_memo::after {
+                position: absolute;
+                content: '';
+                left: -7px;
+                top: -7px;
+                border-width: 0 0 35px 35px;
+                border-style: solid;
+                border-color: #fff #fff rgba(240, 240, 240, 0.51);
+                box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.15);
+            }
+            /*-------/たかひろ作業中--------*/
