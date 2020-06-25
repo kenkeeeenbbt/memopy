@@ -1,0 +1,10 @@
+<h1>友達登録</h1>
+<div>
+    <%= form_with(model: @user) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.submit %>
+    <% end %>
+</div>
