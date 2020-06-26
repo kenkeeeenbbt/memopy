@@ -21,10 +21,10 @@
                 <li><a href="#" class="active">Memopyとは</a></li>
                 <li><a href="#" class="active">人物リスト</a></li>
                 <li><a href="#" class="active">リスト追加</a></li>
-                <li><a href="#" class="active">新規登録</a></li>
                 <% if logged_in? %>
                   <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
                 <% else %>
+                  <li><%= link_to "新規登録", signup_path %></li>
                   <li><%= link_to "ログイン", login_path %></li>
                 <% end %>
             <!-- 通常ユーザーとしてログイン時 -->
@@ -60,8 +60,12 @@
             <li><a href="#">Memopyとは</a></li>
             <li><a href="#">人物リスト</a></li>
             <li><a href="#">リスト追加</a></li>
-            <li><a href="#">新規登録</a></li>
-            <li><a href="#">ログイン</a></li>
+            <% if logged_in? %>
+              <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "新規登録", signup_path %></li>
+              <li><%= link_to "ログイン", login_path %></li>
+            <% end %>
             <!-- 通常ユーザーとしてログイン時 -->
                 <!-- <li><a href="#" class="active">Memopyとは</a></li> -->
                 <!-- <li><a href="#" class="active">人物一覧</a></li> -->
