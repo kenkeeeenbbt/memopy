@@ -1,6 +1,7 @@
 /*-- 共通設定 --*/
 
 /* フォントの設定 */
+
 .main_title {
   font-size: 48px;
 }
@@ -24,6 +25,7 @@
 /* 位置調整のcss */
 
 /* inner */
+
 .inner {
   width: 750px;
   /*max-width: 100%;*/
@@ -33,6 +35,7 @@
 }
 
 /* position: relative; の親要素に対して上下中央揃えをつける */
+
 .center {
   position: absolute;
   top: 50%;
@@ -68,6 +71,7 @@
 }
 
 /* ラベル + インプット部分の設定 */
+
 .input_item {
   width: 100%;
   display: flex;
@@ -76,6 +80,7 @@
 }
 
 /* ラベル */
+
 label {
   width: 170px;
   font-size: 16px;
@@ -84,6 +89,7 @@ label {
 }
 
 /* 入力フォーム テキスト用 */
+
 input {
   width: calc(100% - 210px);
   -webkit-appearance: none;
@@ -104,6 +110,7 @@ input:focus {
 }
 
 /*  入力フォーム テキストエリア*/
+
 .textarea-text {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -130,13 +137,13 @@ input:focus {
 
 .form_bottom {
   width: 100%;
-  height: 100px;
-  position: relative;
+  height: auto;
 }
 
 /* ボタン ログイン, 新規登録 */
 
 /* ボタン */
+
 .btn_cus {
   display: inline-block;
   padding: 0.6em 2em;
@@ -164,5 +171,15 @@ input:focus {
 
 /*-- 新規登録画面 開始 --*/
 
+.new {
+  width: 100%;
+}
+
+.new .form_bottom {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /*-- 新規登録画面 終了 --*/
