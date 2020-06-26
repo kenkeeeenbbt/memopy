@@ -29,7 +29,7 @@ body{
 .wrapper{
     position: relative;
     height: auto;
-    min-height: 100vh;  
+    min-height: 100vh;
 }
 
 
@@ -43,7 +43,7 @@ header{
     position: fixed;
     z-index: 10;
     background:#524E45;
-    width:100%; 
+    width:100%;
     box-sizing:border-box;
     border-bottom: 0.8px solid #727069;
 }
@@ -51,14 +51,14 @@ header{
 
 header .icon{
     color: #fff;
-    line-height: 50px; 
+    line-height: 50px;
     height:50px;
     font-size:24px;
     float:left;
     margin-left: 20px;
     font-weight: bold;
     letter-spacing: 10px;
-} 
+}
 
 .user-name{
     float: left;
@@ -89,7 +89,7 @@ header nav ul li a{
     padding:0 20px;
     color:rgb(255, 255, 255);
     text-decoration:none;
-    display:block; 
+    display:block;
 }
 
 
@@ -138,7 +138,7 @@ header nav ul li a:hover{
         color:rgb(0, 0, 0);
         top:50px;
         left:-100%;
-        transition:0.5s; 
+        transition:0.5s;
     }
 
     header nav ul{
@@ -214,19 +214,6 @@ footer span p{
         justify-content: center;
         flex-wrap:wrap;
     }
-}    
+}
 
 /* フッターCSS終了 */
-
-
-
-
-
-
-
-
-
-
-
-
-
