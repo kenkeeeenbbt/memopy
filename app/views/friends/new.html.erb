@@ -1,6 +1,6 @@
 <h1>友達登録</h1>
 <div>
-    <%= form_with(model: @friend) do |f| %>
+    <%= form_with(model: @friend, local: true) do |f| %>
 
       <%= f.label :name %>
       <%= f.text_field :name %>

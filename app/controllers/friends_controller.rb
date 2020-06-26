@@ -15,11 +15,4 @@ class FriendsController < ApplicationController
     def friend_params
       params.require(:friend).permit(:name, :user_id)
     end
-
-    # 現在ログイン中のユーザーを返す (いる場合)
-    def current_user
-      if session[:user_id]
-        @current_user ||= User.find_by(id: session[:user_id])
-      end
-    end
 end
