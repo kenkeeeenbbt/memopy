@@ -9,24 +9,28 @@
       <h3 class="sub-title">Memopyをさっそく始めてみよう！</h3>
     </div>
     <!-- フォームのメイン部分 -->
-    <div class="input_items">
+    <form class="input_items">
+      <!-- 名前の入力アイテム -->
       <div class="input_item">
         <%= f.label :"お名前" %>
         <%= f.text_field :name %>
       </div>
+      <!-- メールアドレスの入力アイテム -->
       <div class="input_item">
         <%= f.label :"メールアドレス" %>
         <%= f.email_field :email %>
       </div>
+      <!-- パスワードの入力アイテム -->
       <div class="input_item">
         <%= f.label :"パスワード" %>
         <%= f.password_field :password %>
       </div>
+      <!-- パスワード（確認）の入力アイテム -->
       <div class="input_item">
         <%= f.label :password_confirmation, "パスワード（確認）" %>
         <%= f.password_field :password_confirmation %>
       </div>
-    </div>
+    </form>
     <!-- フォームのボトム部分 -->
     <div class="form_bottom">
       <%= f.submit "登録する", class: "btn btn_cus center" %>
