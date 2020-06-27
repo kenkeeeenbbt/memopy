@@ -18,6 +18,7 @@
 
 /* リセットCSS */
 
+<<<<<<< HEAD
 body {
   margin: 0;
   padding: 0;
@@ -49,6 +50,54 @@ header .icon {
   margin-left: 20px;
   font-weight: bold;
   letter-spacing: 10px;
+=======
+body{
+    margin:0;
+    padding:0;
+    min-height: 100vh;
+    font-family: Yuppy SC;
+}
+
+.wrapper{
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+}
+
+
+/* ヘッダーCSS */
+
+header{
+    position: absolute;
+    top:0;
+    left:0;
+    padding:0;
+    position: fixed;
+    z-index: 10;
+    background:#524E45;
+    width:100%;
+    box-sizing:border-box;
+    border-bottom: 0.8px solid #727069;
+}
+
+
+header .icon{
+    color: #fff;
+    line-height: 50px;
+    height:50px;
+    font-size:24px;
+    float:left;
+    margin-left: 20px;
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+
+.user-name{
+    float: left;
+    color: #fff;
+    margin:16px 0px 0px 16px;
+    letter-spacing: 3px;
+>>>>>>> 7badbe866db6c6ffccbe0115cecd352f4731cd2b
 }
 
 .user-name {
@@ -68,10 +117,20 @@ header nav ul {
   display: flex;
 }
 
+<<<<<<< HEAD
 header nav ul li {
   list-style: none;
   margin: 0px;
   border-left: solid 0.1px rgba(212, 193, 178, 0.5);
+=======
+header nav ul li a{
+    height:50px;
+    line-height:50px;
+    padding:0 20px;
+    color:rgb(255, 255, 255);
+    text-decoration:none;
+    display:block;
+>>>>>>> 7badbe866db6c6ffccbe0115cecd352f4731cd2b
 }
 
 header nav ul li a {
@@ -108,6 +167,7 @@ header nav ul li a:hover {
 
 /* ハンバーガーメニュー開始  */
 
+<<<<<<< HEAD
 @media (max-width:991px) {
   header {
     padding: 0 20px;
@@ -141,6 +201,45 @@ header nav ul li a:hover {
     color: white;
     transition: 0.3s;
   }
+=======
+@media (max-width:991px){
+    header{
+        padding: 0 20px;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+    header nav.active{
+        left:0;
+    }
+
+    header nav{
+        position: absolute;
+        width:100%;
+        height:calc(100vh-50px);
+        background: #ffffff;
+        color:rgb(0, 0, 0);
+        top:50px;
+        left:-100%;
+        transition:0.5s;
+    }
+
+    header nav ul{
+        display:block;
+        text-align:center;
+    }
+
+    header nav ul li a{
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+        color:black;
+    }
+    header nav ul li a:hover{
+        background:#524E45;
+        color: white;
+        transition: 0.3s;
+    }
+>>>>>>> 7badbe866db6c6ffccbe0115cecd352f4731cd2b
 }
 
 /* ハンバーガーメニュー終了  */
@@ -187,6 +286,7 @@ footer span p {
 }
 
 /* フッターレスポンシブ */
+<<<<<<< HEAD
 
 @media (max-width:704px) {
   footer nav ul {
@@ -199,3 +299,16 @@ footer span p {
 }
 
 /* フッターCSS終了 */
+=======
+@media (max-width:704px){
+    footer nav ul{
+        margin:0;
+        padding:0;
+        display: flex;
+        justify-content: center;
+        flex-wrap:wrap;
+    }
+}
+
+/* フッターCSS終了 */
+>>>>>>> 7badbe866db6c6ffccbe0115cecd352f4731cd2b
