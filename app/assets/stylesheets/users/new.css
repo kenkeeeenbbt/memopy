@@ -50,7 +50,7 @@
 .form_wrapper {
   box-shadow: -1px 2px 14px 0px;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 100px;
   border-radius: 15px 15px 15px 15px;
 }
 
@@ -66,7 +66,7 @@
 /*フォームのメインとなる真ん中の一番広い部分の設定*/
 
 .input_items {
-  margin: 40px 20px;
+  margin: 40px 20px 20px;
   width: calc(100% - 40px);
 }
 
@@ -81,7 +81,7 @@
 
 /* ラベル */
 
-label {
+.label_cus {
   width: 170px;
   font-size: 16px;
   line-height: 24px;
@@ -90,7 +90,7 @@ label {
 
 /* 入力フォーム テキスト用 */
 
-input {
+.input_cus {
   width: calc(100% - 210px);
   -webkit-appearance: none;
   background-color: transparent;
@@ -175,7 +175,7 @@ input:focus {
   width: 100%;
 }
 
-.new .form_bottom {
+.form_bottom {
   height: 80px;
   display: flex;
   align-items: center;
@@ -183,3 +183,7 @@ input:focus {
 }
 
 /*-- 新規登録画面 終了 --*/
+
+/*-- ログイン画面 開始 --*/
+
+/*-- ログイン画面 終了 --*/
