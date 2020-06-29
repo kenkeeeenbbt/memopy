@@ -1,0 +1,19 @@
+<h1>人物リスト</h1>
+
+<table>
+  <th>名前</th>
+
+  <tbody>
+    <% @friends.each do |friend| %>
+      <tr>
+        <td><%= friend.name %></td>
+        <td><%= link_to '詳細', friend %></td>
+        <td><%= link_to '削除', friend, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '人物を追加する', new_friend_path %>
