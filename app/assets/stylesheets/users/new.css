@@ -164,7 +164,7 @@ input:focus {
   transition: 0.3s;
 }
 
-.btn-cus::-moz-foucus-inner {
+.btn-cus::-moz-focus-inner {
   padding: 0;
   border: none;
 }
@@ -185,6 +185,9 @@ input:focus {
 /*-- 新規登録画面 終了 --*/
 
 /*-- ログイン画面 開始 --*/
-.login{
-width: 100%;}
+
+.login {
+  width: 100%;
+}
+
 /*-- ログイン画面 終了 --*/
