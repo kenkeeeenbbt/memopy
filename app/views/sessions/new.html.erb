@@ -1,23 +1,38 @@
-<h1>Log in</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<!-- セクションを定義 -->
+<section class="login">
+  <% provide(:title, 'Sign up') %>
+  <div class="inner">
+    <!--  ヘッダー、メイン、フッターの３分割で構成した入力フォーム -->
     <%= form_with scope: :session, url:login_path, local: true do |f| %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :remember_me, class: "checkbox inline" do %>
-        <%= f.check_box :remember_me %>
-        <span>ログイン状態を維持する</span>
-      <% end %>
-
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <div class="form_wrapper">
+      <!-- フォームの上部の部分 -->
+      <div class="form_top">
+        <h2 class="section_title">ログイン</h2>
+        <h3 class="sub-title">Memopyをさっそく始めてみよう！</h3>
+      </div>
+      <!-- フォームのメイン部分 -->
+      <div class="input_items">
+        <!-- メールアドレスの入力アイテム -->
+        <div class="input_item">
+          <%= f.label :"メールアドレス" %>
+          <%= f.email_field :email %>
+        </div>
+        <!-- パスワードの入力アイテム -->
+        <div class="input_item">
+          <%= f.label :パスワード %>
+          <%= f.password_field :password %>
+        </div>
+        <!-- ログイン状態を維持するチェックボックス -->
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+          <%= f.check_box :remember_me %>
+          <span>ログイン状態を維持する</span>
+        <% end %>
+        <p>まだ登録お済みでない方は<%= link_to "新規登録", signup_path %>からご登録ください。</p>
+      </div>
+      <!-- フォームのボトム部分 -->
+      <div class="form_bottom">
+        <%= f.submit "ログインする", class: "btn btn_cus" %>
+      </div>
     <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   </div>
-</div> 
+</section>
