@@ -13,23 +13,23 @@
         <div class="input_items">
           <!-- 名前の入力アイテム -->
           <div class="input_item">
-            <%= f.label :"お名前" %>
-            <%= f.text_field :name %>
+            <%= f.label :"お名前", {class: 'label_cus'} %>
+            <%= f.text_field :name, {class: 'input_cus'} %>
           </div>
           <!-- メールアドレスの入力アイテム -->
           <div class="input_item">
-            <%= f.label :"メールアドレス" %>
-            <%= f.email_field :email %>
+            <%= f.label :"メールアドレス", {class: 'label_cus'} %>
+            <%= f.email_field :email, {class: 'input_cus'} %>
           </div>
           <!-- パスワードの入力アイテム -->
           <div class="input_item">
-            <%= f.label :"パスワード" %>
-            <%= f.password_field :password %>
+            <%= f.label :"パスワード", {class: 'label_cus'} %>
+            <%= f.password_field :password, {class: 'input_cus'} %>
           </div>
           <!-- パスワード（確認）の入力アイテム -->
           <div class="input_item">
-            <%= f.label :password_confirmation, "パスワード（確認）" %>
-            <%= f.password_field :password_confirmation %>
+            <%= f.label :password_confirmation, "パスワード（確認）", {class: 'label_cus'} %>
+            <%= f.password_field :password_confirmation, {class: 'input_cus'} %>
           </div>
         </div>
         <!-- フォームのボトム部分 -->
