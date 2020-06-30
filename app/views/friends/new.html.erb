@@ -1,28 +1,24 @@
 <section class="chara_add">
   <div class="inner">
     <%= form_with(model: @friend, local: true) do |f| %>
-    <div class="form_wrapper">
-      <!-- フォームの上部の部分 -->
-      <div class="form_top">
-        <h2 class="section_title">人物追加</h2>
-        <h3 class="sub-title">新しい友だちを登録しよう！</h3>
-      </div>
-      <!-- フォームのメイン部分 -->
-      <div class="input_items">
-        <!-- ふりがなの入力アイテム -->
-        <div class="input_item">
-          <%= f.label :"ふりがな", {class: 'label_cus'} %>
-          <%= f.text_field :name, {class: 'input_cus'} %>
+      <div class="form_wrapper">
+        <!-- フォームの上部の部分 -->
+        <div class="form_top">
+          <h2 class="section_title">人物追加</h2>
+          <h3 class="sub-title">新しい友だちを登録しよう！</h3>
         </div>
-        <!-- 名前の入力アイテム -->
-        <div class="input_item">
-          <%= f.label :"お名前", {class: 'label_cus'} %>
-          <%= f.text_field :name, {class: 'input_cus'} %>
+        <!-- フォームのメイン部分 -->
+        <div class="input_items">
+          <!-- 名前の入力アイテム -->
+          <div class="input_item">
+            <%= f.label :"お名前", {class: 'label_cus'} %>
+            <%= f.text_field :name, {class: 'input_cus'} %>
+          </div>
         </div>
-      </div>
-      <!-- フォームのボトム部分 -->
-      <div class="form_bottom">
-        <%= f.submit "追加する", {class: 'btn btn_cus'} %>
+        <!-- フォームのボトム部分 -->
+        <div class="form_bottom">
+          <%= f.submit "追加する", {class: 'btn btn_cus'} %>
+        </div>
       </div>
     <% end %>
   </div>
