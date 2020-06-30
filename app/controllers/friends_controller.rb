@@ -3,7 +3,8 @@ class FriendsController < ApplicationController
   before_action :set_friend, only: [:show, :destroy]
 
   def index
-    @friends = Friend.all
+    user = User.find(current_user.id)
+    @friends = user.friends
   end
 
   def show
@@ -14,7 +15,7 @@ class FriendsController < ApplicationController
   end
 
   def create
-    @friend = Friend.new(friend_params)
+    @friend = current_user.friends.build(friend_params)
     @friend.save
     redirect_to friends_url
   end
