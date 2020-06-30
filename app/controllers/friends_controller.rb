@@ -17,11 +17,13 @@ class FriendsController < ApplicationController
   def create
     @friend = current_user.friends.build(friend_params)
     @friend.save
+    flash[:success] = "人物を追加しました。"
     redirect_to friends_url
   end
 
   def destroy
     @friend.destroy
+    flash[:success] = "削除しました。"
     redirect_to friends_url
   end
 

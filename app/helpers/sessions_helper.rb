@@ -30,10 +30,12 @@ module SessionsHelper
     current_user.present?
   end
 
-  # 現在のユーザーをログアウトする
-  def log_out
-    session.delete(:user_id)
-    @current_user = nil
+  # ログイン済みユーザーかどうか確認
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "ログインしてください。"
+      redirect_to login_url
+    end
   end
 
   # 永続的セッションを破棄する
