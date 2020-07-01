@@ -1,6 +1,7 @@
 class FriendsController < ApplicationController
   before_action :current_user
   before_action :set_friend, only: [:show, :destroy]
+  before_action :redirect_to_login
 
   def index
     user = User.find(current_user.id)
