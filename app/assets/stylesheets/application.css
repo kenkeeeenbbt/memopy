@@ -33,12 +33,10 @@ body{
 
 /* ==========ヘッダー開始========== */
 header{
-  position: absolute;
   top:0;
   left:0;
   padding:0;
   position: fixed;
-  z-index: 10;
   background:#524E45;
   width:100%;
   box-sizing:border-box;
