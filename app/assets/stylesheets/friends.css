@@ -1,5 +1,5 @@
 
-// 人物追加コンテンツ全体に適用するコード
+/* 人物追加コンテンツ全体に適用するコード */
 .friends-wrapper{
   text-align: center;
   position: absolute;
@@ -8,7 +8,7 @@
   padding-bottom: 216px;
 }
 
-// ページタイトル（スクロール時に固定）
+/* ページタイトル（スクロール時に固定） */
 #page-title{
   width: 100%;
   border-bottom: 1px solid rgb(0, 0, 0);
@@ -20,7 +20,7 @@
   margin-top: 0px;
 }
 
-// スクロール時にページタイトルを固定するためのコード
+/* スクロール時に見出し要素をヘッダーに固定するためのコード */
 .is-fixed {
   position: fixed;
   top: 0;
@@ -29,12 +29,12 @@
   width: 100%;
 }
 
-// 人物リスト全体に関するコード
+/* 人物リスト全体に関するコード */
 .friends-list{
   margin-top: 24px;
 }
 
-// 人物の外枠に関するコード
+/* 人物の外枠に関するコード */
 .friends{
   font-size: 30px;
   letter-spacing: 4px;
@@ -52,7 +52,7 @@
   border-bottom: 1px solid rgb(167, 164, 164);
 }
 
-// 人物名に関するコード
+/* 人物名に関するコード */
 .friends-name{
   flex: 1;
   color:rgba(0, 0, 0, 0.5);
@@ -67,7 +67,7 @@
   padding-top: 10px;
 }
 
-// 人物削除に関するコード
+/* 人物削除に関するコード */
 .friends-destroy{
   color:rgba(0, 0, 0, 0.5);
   font-size: 12px;
@@ -81,11 +81,11 @@
   transition: 0.2s;
   font-size:14px;
   background: rgba(218, 85, 85, 0.856);
-  padding:24px 20px 0 20px;
+  padding:24 20 0 20;
   color: white;
 }
 
-// 人物追加ボタンに関するコード
+/* 人物追加ボタンに関するコード */
 .friends-add-btn{
   margin-top: 56px;
   display: inline-block;
