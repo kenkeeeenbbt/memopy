@@ -48,6 +48,7 @@
       <!-- ヘッダー終了 -->
       <!-- メイン開始 -->
       <main>
+        <%= yield =%>
       <% flash.each do |message_type, message| %>
         <%= message %>
       <% end %>
