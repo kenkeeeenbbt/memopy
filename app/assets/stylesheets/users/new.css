@@ -9,17 +9,17 @@
 .section_title {
   font-size: 24px;
   text-align: center;
-  margin: 0;
+  margin-bottom: 10px;
   color: #fff;
 }
 
 .sub-title {
-  font-size: 16px;
   text-align: center;
   color: #fff;
   font-size: 16px;
   text-align: center;
   color: #fff;
+  margin: 0 0 10px;
 }
 
 /* 位置調整のcss */
@@ -27,8 +27,7 @@
 /* inner */
 
 .inner {
-  width: 750px;
-  /*max-width: 100%;*/
+  width: 90%;
   margin: 0 auto;
   padding: 20px;
   height: 100%;
@@ -55,15 +54,15 @@
 
 .form_wrapper {
   box-shadow: -1px 2px 14px 0px;
-  width: 100%;
-  margin-top: 100px;
+  width: 600px;
+  margin: 100px auto 100px;
   border-radius: 15px 15px 15px 15px;
 }
 
 /* フォームの上部の部分 */
 
 .form_top {
-  margin: 0 auto;
+  margin: 0 auto 40px;
   background-color: #524E45;
   padding: 20px 0;
   border-radius: 15px 15px 0px 0px;
@@ -72,7 +71,7 @@
 /*フォームのメインとなる真ん中の一番広い部分の設定*/
 
 .input_items {
-  margin: 40px 20px 20px;
+  margin: 0 20px 0;
   width: calc(100% - 40px);
 }
 
@@ -201,6 +200,31 @@ input:focus {
 /* メディアクエリの設定 スマホサイズ 開始 */
 
 @media (max-width:670px) {
+  /* 位置調整のcss */
+  /* inner */
+  .inner {
+    width: 95%;
+  }
+  /*-- 自作パーツ --*/
+  /*ヘッダー、メイン、フッターで構成した入力フォーム*/
+  .form_wrapper {
+    width: 350px;
+  }
+  /* ラベル + インプット部分の設定 */
+  .input_item {
+    width: 100%;
+    margin: 0 0 20px;
+    flex-direction: column;
+  }
+  /* ラベル */
+  .label_cus {
+    margin-bottom: 10px;
+  }
+  /* 入力フォーム テキスト用 */
+  .input_cus {
+    width: auto;
+    -webkit-appearance: none;
+  }
   /* スマホサイズ時に、改行が行われるCSSクラスを実行 */
   .br_sp {
     display: block;
