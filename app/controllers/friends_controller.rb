@@ -2,6 +2,7 @@ class FriendsController < ApplicationController
   before_action :current_user
   before_action :set_friend, only: [:show, :destroy]
   before_action :redirect_to_login
+  before_action :correct_friend, only: [:show, :destroy]
 
   def index
     user = User.find(current_user.id)
@@ -36,5 +37,12 @@ class FriendsController < ApplicationController
 
     def set_friend
       @friend = Friend.find(params[:id])
+    end
+
+    def correct_friend
+      unless @friend.user_id == current_user.id
+        flash[:danger] = "ログインしてください。"
+        redirect_to login_url
+      end
     end
 end
