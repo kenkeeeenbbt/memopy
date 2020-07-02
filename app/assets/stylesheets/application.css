@@ -31,6 +31,20 @@ body{
   min-height: 100vh;
 }
 
+/* フラッシュメッセージ */
+.flash-message{
+  display: block;
+  background-color: #ef8040;
+  color:white;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top:50px;
+  padding-top:6px;
+  height: 24px;
+  font-size: 16px;
+}
+
 /* ==========ヘッダー開始========== */
 header{
   top:0;
