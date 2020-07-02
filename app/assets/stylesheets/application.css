@@ -126,6 +126,7 @@ header nav ul li a:hover{
 @media (max-width:991px){
   header{
     padding: 0 20px;
+    z-index: 10;
   }
   .menu-toggle{
     display: block;
