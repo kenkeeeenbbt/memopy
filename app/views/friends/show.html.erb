@@ -1,13 +1,17 @@
-<h1>人物詳細</h1>
-
-<p>
-  <strong>名前:</strong>
-  <%= @friend.name %>
-</p>
-
-<p>
-  <strong>user_id:</strong>
-  <%= @friend.user_id %>
-</p>
-
-<%= link_to '戻る', friends_path %>
+<div class="friends-wrapper">
+  <aside id="page-title">
+    <h1>人物詳細</h1>
+    <h2>今度会うとき、何話す？</h2>
+  </aside>
+  <div>
+    <p>
+      <strong>名前:</strong>
+      <%= @friend.name %>
+    </p>
+    <p>
+      <strong>user_id:</strong>
+      <%= @friend.user_id %>
+    </p>
+    <%= link_to '戻る', friends_path %>
+  </div>
+</div>
