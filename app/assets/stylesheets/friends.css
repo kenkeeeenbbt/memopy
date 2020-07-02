@@ -14,6 +14,8 @@
   border-bottom: 1px solid rgb(0, 0, 0);
   letter-spacing: 8px;
   background-color: rgb(255, 255, 255);
+  padding-top:24px;
+  padding-bottom: 16px;
 }
 #page-title h1{
   font-size:32px;
