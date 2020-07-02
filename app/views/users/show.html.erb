@@ -2,12 +2,16 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
-      <h1>
-        <%= @user.name %>
-      </h1>
-      <a>
-      <%= @user.email %>
-      <a>
+      <% if @user == current_user %>
+        <h1>
+          <%= @user.name %>
+        </h1>
+        <a>
+        <%= @user.email %>
+        <a>
+      <% else %>
+        <a>表示できません。</a>
+      <% end %>
     </section>
   </aside>
 </div>
