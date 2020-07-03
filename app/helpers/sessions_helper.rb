@@ -30,8 +30,8 @@ module SessionsHelper
     current_user.present?
   end
 
-  # ログイン済みユーザーかどうか確認
-  def logged_in_user
+  # ログインしていなければログインページにリダイレクト
+  def redirect_to_login
     unless logged_in?
       flash[:danger] = "ログインしてください。"
       redirect_to login_url
