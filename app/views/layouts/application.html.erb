@@ -49,9 +49,11 @@
       <!-- メイン開始 -->
       <main>
         <%= yield =%>
-      <% flash.each do |message_type, message| %>
-        <%= message %>
-      <% end %>
+        <% flash.each do |message_type, message| %>
+          <div class="flash-message">
+          　<%= message %>
+          </div>
+        <% end %>
       </main>
       <!-- メイン終了 -->
       <!-- フッター開始 -->

@@ -1,19 +1,38 @@
-<h1>人物リスト</h1>
-
-<table>
-  <th>名前</th>
-
-  <tbody>
+<div class="friends-wrapper">
+  <aside id="page-title">
+    <h1>人物リスト</h1>
+    <h2>今度会うとき、何話す？</h2>
+  </aside>
+  <div class="friends-list">
     <% @friends.each do |friend| %>
-      <tr>
-        <td><%= friend.name %></td>
-        <td><%= link_to '詳細', friend %></td>
-        <td><%= link_to '削除', friend, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %></td>
-      </tr>
+      <div class="friends">
+        <%= link_to friend.name, friend ,class:"friends-name"%>
+        <%= link_to '削除', friend, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' },class:"friends-destroy"%>
+      </div>
     <% end %>
-  </tbody>
-</table>
+    <%= link_to '人物追加', new_friend_path ,class:"friends-add-btn"%>
+  </div>
+</div>
 
-<br>
 
-<%= link_to '人物を追加する', new_friend_path %>
+<!--スクロール時に見出し要素をヘッダーに固定 -->
+<script>
+$(function() {
+  var $win = $(window),
+      $main = $('main'),
+      $aside = $('aside'),
+      navHeight = $aside.outerHeight(),
+      navPos = $aside.offset().top,
+      fixedClass = 'is-fixed';
+  $win.on('load scroll', function() {
+    var value = $(this).scrollTop();
+    if ( value > navPos ) {
+      $aside.addClass(fixedClass);
+      $main.css('margin-top', navHeight);
+    } else {
+      $aside.removeClass(fixedClass);
+      $main.css('margin-top', '0');
+    }
+  });
+});
+</script>

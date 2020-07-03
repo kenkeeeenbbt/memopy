@@ -1,17 +1,23 @@
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <% if @user == current_user %>
-        <h1>
-          <%= @user.name %>
-        </h1>
-        <a>
-        <%= @user.email %>
-        <a>
-      <% else %>
-        <a>表示できません。</a>
-      <% end %>
-    </section>
+<div class="friends-wrapper">
+  <aside id="page-title">
+    <h1>Memopyへようこそ</h1>
+    <h2>今度会うとき、何話す？</h2>
   </aside>
+  <% provide(:title, @user.name) %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <% if @user == current_user %>
+          <h1>
+            <%= @user.name %>
+          </h1>
+          <a>
+            <%= @user.email %>
+          <a>
+        <% else %>
+          <a>表示できません。</a>
+        <% end %>
+      </section>
+    </aside>
+  </div>
 </div>
