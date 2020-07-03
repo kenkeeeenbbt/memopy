@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :redirect_to_login, only: [:show]
 
   def show
     @user = User.find(params[:id])
