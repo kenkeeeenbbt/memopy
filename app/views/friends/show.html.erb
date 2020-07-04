@@ -1,21 +1,14 @@
 <div class="friends-wrapper">
   <aside id="page-title">
-    <h1>人物詳細</h1>
-    <h2>今度会うとき、何話す？</h2>
-  </aside>
-  <div>
     <% if @friend.user_id == current_user.id %>
-      <p>
-        <strong>名前:</strong>
-        <%= @friend.name %>
-      </p>
-      <p>
-        <strong>user_id:</strong>
-        <%= @friend.user_id %>
-      </p>
+      <h1><%= @friend.name %></h1>
     <% else %>
       <a>表示できません。</a>
     <% end %>
-    <%= link_to '戻る', friends_path %>
-  </div>
+    <h3>プロフィール</h3>
+
+  </aside>
+      <div class="return-btn">
+      <%= link_to '戻る', friends_path %>
+    </div>
 </div>
