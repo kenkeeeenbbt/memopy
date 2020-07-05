@@ -105,3 +105,23 @@
   opacity: 1;
   transition: 0.3s;
 }
+
+/* 人物一覧ページへ戻るボタン */
+.return-btn{
+  display: inline-block;
+  background-color: #ef8040;
+  opacity: 0.9;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .2);
+  position: relative;
+  top: -64px;
+  left: 200px;
+  padding: 4px 24px;
+  color: #fff;
+  text-decoration: none;
+}
+.return-btn:hover{
+  opacity: 1;
+  transition: 0.3s;
+}
