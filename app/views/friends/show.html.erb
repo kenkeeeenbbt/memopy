@@ -1,7 +1,21 @@
 <div class="friends-wrapper">
   <aside id="page-title">
     <% if @friend.user_id == current_user.id %>
-      <h1><%= @friend.name %></h1>
+      <p>
+        <strong>名前:</strong>
+        <%= @friend.name %>
+      </p>
+      <p>
+        <strong>user_id:</strong>
+        <%= @friend.user_id %>
+      </p>
+      <% @friends_details.each do |friends_detail| %>
+        <div>
+          <%= friends_detail.feature %>
+          <%= friends_detail.content %>
+        </div>
+      <% end %>
+      <%= link_to 'feature、contentを追加', new_friends_detail_path %>
     <% else %>
       <a>表示できません。</a>
     <% end %>
