@@ -7,12 +7,14 @@
     <% end %>
     <h3>プロフィール</h3>
   </aside>
-  <%= link_to '戻る', friends_path,class:"return-btn" %>
-  <% @friends_details.each do |friends_detail| %>
+  <%= link_to '戻る', friends_path ,class:"return-btn" %>
   <div>
-    <%= friends_detail.feature %>
-    <%= friends_detail.content %>
+    <% @friends_details.each do |friends_detail| %>
+      <div>
+        <%= friends_detail.feature %>
+        <%= friends_detail.content %>
+      </div>
+    <% end %>
   </div>
-  <% end %>
   <%= link_to 'feature、contentを追加', new_friends_detail_path %>
 </div>
