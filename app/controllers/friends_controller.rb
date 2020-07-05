@@ -1,11 +1,11 @@
 class FriendsController < ApplicationController
   before_action :current_user
-  before_action :redirect_to_login
   before_action :set_friend, only: [:show, :destroy]
-  before_action :set_friends_details, only: [:show]
+  before_action :redirect_to_login
 
   def index
-    @friends = current_user.friends
+    user = User.find(current_user.id)
+    @friends = user.friends
   end
 
   def show
@@ -36,9 +36,5 @@ class FriendsController < ApplicationController
 
     def set_friend
       @friend = Friend.find(params[:id])
-    end
-
-    def set_friends_details
-      @friends_details = @friend.friends_details
     end
 end
