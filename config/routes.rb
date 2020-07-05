@@ -7,10 +7,6 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  get '/friends/:id/new', to: 'friends_details#new', as: 'new_friends_detail'
-  post '/friends/:id/new', to: 'friends_details#create'
-
   resources :users
   resources :friends
-  resources :friends_details
 end
