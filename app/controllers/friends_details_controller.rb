@@ -8,9 +8,13 @@ class FriendsDetailsController < ApplicationController
 
   def create
     @friends_detail = @friend.friends_details.build(friends_detail_params)
-    @friends_detail.save
-    flash[:success] = "追加しました。"
-    redirect_to friend_path
+    if @friends_detail.save
+      flash[:success] = "追加しました。"
+      redirect_to friend_path
+    else
+      flash.now[:danger] = "失敗しました。"
+      render 'new'
+    end
   end
 
     private
