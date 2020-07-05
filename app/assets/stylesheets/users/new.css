@@ -9,17 +9,17 @@
 .section_title {
   font-size: 24px;
   text-align: center;
-  margin: 0;
+  margin-bottom: 10px;
   color: #fff;
 }
 
 .sub-title {
-  font-size: 16px;
   text-align: center;
   color: #fff;
   font-size: 16px;
   text-align: center;
   color: #fff;
+  margin: 0 0 10px;
 }
 
 /* 位置調整のcss */
@@ -27,8 +27,7 @@
 /* inner */
 
 .inner {
-  width: 750px;
-  /*max-width: 100%;*/
+  width: 90%;
   margin: 0 auto;
   padding: 20px;
   height: 100%;
@@ -55,15 +54,15 @@
 
 .form_wrapper {
   box-shadow: -1px 2px 14px 0px;
-  width: 100%;
-  margin-top: 100px;
+  width: 600px;
+  margin: 100px auto 120px;
   border-radius: 15px 15px 15px 15px;
 }
 
 /* フォームの上部の部分 */
 
 .form_top {
-  margin: 0 auto;
+  margin-bottom: 40px;
   background-color: #524E45;
   padding: 20px 0;
   border-radius: 15px 15px 0px 0px;
@@ -72,7 +71,7 @@
 /*フォームのメインとなる真ん中の一番広い部分の設定*/
 
 .input_items {
-  margin: 40px 20px 20px;
+  margin: 0 20px;
   width: calc(100% - 40px);
 }
 
@@ -82,7 +81,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin: 15px 0;
+  margin-bottom: 20px;
 }
 
 /* ラベル */
@@ -99,11 +98,9 @@
 .input_cus {
   width: calc(100% - 210px);
   -webkit-appearance: none;
-  background-color: transparent;
-  background-image: none;
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  border-radius: 7px;
-  color: inherit;
+  border: 1px solid rgba(82, 78, 69, 0.5019607843137255);
+  border-radius: 5px;
+  color: #524e45;
   font-family: inherit;
   font-size: 1em;
   padding: 0.4em 0.8em;
@@ -115,35 +112,14 @@ input:focus {
   outline: none;
 }
 
-/*  入力フォーム テキストエリア*/
-
-.textarea-text {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  background-image: none;
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  border-radius: 5px;
-  color: inherit;
-  font-family: inherit;
-  font-size: 1em;
-  height: 100px;
-  padding: 0.4em 0.8em;
-  width: 100%;
-}
-
-.textarea-text:focus {
-  border: 1px solid rgba(0, 0, 0, 0.32);
-  box-shadow: none;
-  outline: none;
-}
-
 /*フォームのボトム部分*/
 
 .form_bottom {
-  width: 100%;
+  padding-bottom: 20px;
   height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ボタン ログイン, 新規登録 */
@@ -151,18 +127,17 @@ input:focus {
 /* ボタン */
 
 .btn_cus {
+  font-size: 16px;
   display: inline-block;
-  padding: 0.6em 2em;
-  width: auto;
-  background-image: none;
+  padding: 12px 32px;
   background-color: #ef8040;
   color: #fff;
   text-decoration: none;
-  border: none;
-  border-radius: 6px;
+  border: solid 3px #f98948;
+  border-radius: 12px;
   cursor: pointer;
   -webkit-appearance: none;
-  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 1);
 }
 
 .btn_cus:hover, .btn_cus:focus {
@@ -177,7 +152,7 @@ input:focus {
 
 /*-- 新規登録画面 開始 --*/
 
-.new {
+section {
   width: 100%;
 }
 
@@ -201,6 +176,31 @@ input:focus {
 /* メディアクエリの設定 スマホサイズ 開始 */
 
 @media (max-width:670px) {
+  /* 位置調整のcss */
+  /* inner */
+  .inner {
+    width: 95%;
+  }
+  /*-- 自作パーツ --*/
+  /*ヘッダー、メイン、フッターで構成した入力フォーム*/
+  .form_wrapper {
+    width: 350px;
+  }
+  /* ラベル + インプット部分の設定 */
+  .input_item {
+    width: 100%;
+    margin: 0 0 20px;
+    flex-direction: column;
+  }
+  /* ラベル */
+  .label_cus {
+    margin-bottom: 10px;
+  }
+  /* 入力フォーム テキスト用 */
+  .input_cus {
+    width: auto;
+    -webkit-appearance: none;
+  }
   /* スマホサイズ時に、改行が行われるCSSクラスを実行 */
   .br_sp {
     display: block;
