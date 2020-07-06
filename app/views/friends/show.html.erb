@@ -1,20 +1,73 @@
 <div class="friends-wrapper">
   <aside id="page-title">
     <% if @friend.user_id == current_user.id %>
-      <h1><%= @friend.name %></h1>
+      <h1><%= @friend.name %>のプロフィール</h1>
     <% else %>
       <a>表示できません。</a>
     <% end %>
-    <h3>プロフィール</h3>
+    <%= link_to '追加', new_friends_detail_path ,class:"feature-add-btn"%>
+    <%= link_to '戻る', friends_path ,class:"return-btn" %>
   </aside>
-  <%= link_to '戻る', friends_path ,class:"return-btn" %>
-  <div>
+  <%#==========プロフィール詳細情報に関するコード==========%>
+  <div class="show-wrapper">
+    <h2 class="show-list-title">プロフィールリスト</h2>
     <% @friends_details.each do |friends_detail| %>
-      <div>
-        <%= friends_detail.feature %>
-        <%= friends_detail.content %>
+      <div class="show-contents">
+        <h2 class="accordion-title"><a href="#"><%= friends_detail.feature %></a></h2>
+          <%#=========スライドダウンで表示===========%>
+          <div class="accordion-content">
+            <div class="FlexTextarea ">
+              <div class="FlexTextarea-dummy" aria-hidden="true">
+              </div>
+              <textarea id="FlexTextarea" class="FlexTextarea-textarea">
+                <%= friends_detail.content %>
+              </textarea>
+            </div>
+          </div>
       </div>
     <% end %>
   </div>
-  <%= link_to 'feature、contentを追加', new_friends_detail_path %>
 </div>
+<%#=============== ここからJSコード ===============%>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+//  =============== 人物詳細コンテンツのスライド表示 ===============
+  $('.accordion-title a').on('click', (e) => {
+    e.preventDefault();
+      const content = $(e.target)
+        .closest('.show-contents')
+        .find('.accordion-content');
+      if (!content.is(':visible')) {
+        content.slideDown(50);
+      }else{
+        content.slideUp(50);
+    }
+  });
+//  =============== 見出しタイトルの固定 ===============
+$(function() {
+  var $win = $(window),
+      $main = $('main'),
+      $aside = $('aside'),
+      navHeight = $aside.outerHeight(),
+      navPos = $aside.offset().top,
+      fixedClass = 'is-fixed';
+  $win.on('load scroll', function() {
+    var value = $(this).scrollTop();
+    if ( value > navPos ) {
+      $aside.addClass(fixedClass);
+      $main.css('margin-top', navHeight);
+    } else {
+      $aside.removeClass(fixedClass);
+      $main.css('margin-top', '0');
+    }
+  });
+});
+//  ===============テキストエリアの高さ自動調整===============
+function flexTextarea(el) {
+  const dummy = el.querySelector('.FlexTextarea-dummy')
+  el.querySelector('.FlexTextarea-textarea').addEventListener('input', e => {
+    dummy.textContent = e.target.value + '\u200b'
+  })
+}
+document.querySelectorAll('.FlexTextarea').forEach(flexTextarea)
+</script>
