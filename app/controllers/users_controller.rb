@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :redirect_to_login, only: [:show]
+  before_action :set_user, only: [:show, :edit, :update]
+  before_action :redirect_to_login, only: [:show, :edit, :update]
 
   def show
-    @user = User.find(params[:id])
   end
 
   def new
@@ -20,7 +20,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update_attributes(user_params)
+      flash[:success] = "更新しました。"
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+
   private
+
+    def set_user
+      @user = User.find(params[:id])
+    end
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
