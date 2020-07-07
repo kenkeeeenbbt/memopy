@@ -1,0 +1,40 @@
+<section class="new">
+  <div class="inner">
+    <!--  ヘッダー、メイン、フッターの３分割で構成した入力フォーム -->
+    <%= form_with(model: @user) do |f| %>
+      <div class="form_wrapper">
+        <!-- フォームの上部の部分 -->
+        <div class="form_top">
+          <h2 class="section_title">編集</h2>
+        </div>
+        <!-- フォームのメイン部分 -->
+        <div class="input_items">
+          <!-- 名前の入力アイテム -->
+          <div class="input_item">
+            <%= f.label :"お名前", {class: 'label_cus'} %>
+            <%= f.text_field :name, {class: 'input_cus'} %>
+          </div>
+          <!-- メールアドレスの入力アイテム -->
+          <div class="input_item">
+            <%= f.label :"メールアドレス", {class: 'label_cus'} %>
+            <%= f.email_field :email, {class: 'input_cus'} %>
+          </div>
+          <!-- パスワードの入力アイテム -->
+          <div class="input_item">
+            <%= f.label :"パスワード", {class: 'label_cus'} %>
+            <%= f.password_field :password, {class: 'input_cus'} %>
+          </div>
+          <!-- パスワード（確認）の入力アイテム -->
+          <div class="input_item">
+            <%= f.label :password_confirmation, "パスワード（確認）", {class: 'label_cus'} %>
+            <%= f.password_field :password_confirmation, {class: 'input_cus'} %>
+          </div>
+        </div>
+        <!-- フォームのボトム部分 -->
+        <div class="form_bottom">
+          <%= f.submit "更新する", class: "btn btn_cus" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
