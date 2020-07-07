@@ -14,7 +14,11 @@
       <!-- ヘッダー開始 -->
       <header>
         <div class="icon">Memopy</div>
-          <p class="user-name"> ようこそゲストさん</p>
+          <% if current_user %>
+            <p class="user-name">
+              <%= "ようこそ#{@current_user.name}さん" %>
+            </p>
+          <% end %>
           <nav>
             <ul>
             <!-- ゲストユーザーとしてログイン時 -->
