@@ -14,7 +14,11 @@
           <!-- 名前の入力アイテム -->
           <div class="input_item">
             <%= f.label :"お名前", {class: 'label_cus'} %>
+
+<div class="field">
+<div class="fake">（例）田中  太郎</div>
             <%= f.text_field :name, {class: 'input_cus'} %>
+</div>
           </div>
           <!-- メールアドレスの入力アイテム -->
           <div class="input_item">
@@ -40,3 +44,43 @@
     <% end %>
   </div>
 </section>
+<script>
+//変数の宣言
+//querySelectorAll() メソッドは、与えられた CSS セレクターに一致する文書中の要素のリストを示す静的な (生きていない) NodeList を返します。
+      var inputs = document.querySelectorAll('.field .input_cus')
+      for (var i = 0, len = inputs.length; i < len; i++) {
+        var input = inputs.item(i)
+//addEventListener() メソッドは、特定のイベントが対象に配信されるたびに呼び出される関数を設定
+        .input_cus.addEventListener('click', (e)=>{
+          var target = e.target
+//Element.previousElementSiblingは、前の要素を取得する
+// 変数「fake」を定義する
+//*フォームオブジェクトのtargetプロパティは、フォーム送信先のターゲットを設定・参照します。
+          var fake = target.previousElementSibling
+          target.classList.add('focus')
+//fakeクラスの要素に、moveとfocusのクラスを付与する
+          .fake.classList.add('move', 'focus')
+        })
+
+        .input_cus.addEventListener('blur', (e)=>{
+//event.target プロパティは、イベントデリゲーションを実装するために使用できます。
+//＊イベントデリゲーションとはliからulへのように、イベントが伝播していく。
+//*イベントデリゲートを利用した場合、しない場合と比べて要素に指定するイベントの数が少なくなります。その為、ブラウザメモリなどを節約し処理を早くさせることができます。
+//変数「e.target」を宣言
+          var target = e.target
+//Element.previousElementSiblingは、前の要素を取得する
+// 変数「fake」を定義する
+          var fake = target.previousElementSibling
+//lengthプロパティは配列の要素数を取得するのに使用します。
+//「もし、ターゲット、value(オブジェクトの値)、配列の要素数が0だった場合」のif文
+          if (target.value.length === 0) {
+//「クラスfake（偽プレースホルダー） からクラスmoveを外す（フォームの中に戻る）」
+            .fake.classList.remove('move')
+          }
+//*フォームオブジェクトのtargetプロパティは、フォーム送信先のターゲットを設定・参照します。
+          target.classList.remove('focus')
+//偽プレースホルダーからfocusクラスが外れる（color:青;解除）
+          fake.classList.remove('focus')
+        })
+      }
+</script>
