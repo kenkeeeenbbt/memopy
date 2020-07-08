@@ -53,8 +53,6 @@ input:focus {
   transform: translateY(-50%) translateX(-50%);
 }
 
-/*-- 自作パーツ --*/
-
 /*ヘッダー、メイン、フッターで構成した入力フォーム*/
 
 .form_wrapper {
@@ -221,25 +219,35 @@ section {
   .inner {
     width: 95%;
   }
-  /*-- 自作パーツ --*/
   /*ヘッダー、メイン、フッターで構成した入力フォーム*/
   .form_wrapper {
     width: 350px;
   }
+  /*フォームのメインとなる真ん中の一番広い部分の設定*/
+  .input_items {
+    width: 100%;
+    margin: 40px auto;
+    padding: 20px 10px;
+  }
   /* ラベル + インプット部分の設定 */
   .input_item {
-    width: 100%;
-    margin: 0 0 20px;
+    width: 330px;
+    display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
   }
   /* ラベル */
   .label_cus {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   /* 入力フォーム テキスト用 */
+  .field {
+    width: 330px;
+  }
   .input_cus {
-    width: auto;
-    -webkit-appearance: none;
+    width: 310px;
+    height: 45px;
+    padding: 0 12px;
   }
   /* スマホサイズ時に、改行が行われるCSSクラスを実行 */
   .br_sp {
