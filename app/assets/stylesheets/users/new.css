@@ -1,4 +1,7 @@
 /*-- 共通設定 --*/
+input:focus{
+  box-shadow: none;
+  outline: none;}
 
 /* フォントの設定 */
 
@@ -145,8 +148,6 @@
 
 .input_cus.focus {
   border: 2px solid #1B74E8;
-  box-shadow: none;
-  outline: none;
 }
 
 /*フォームのボトム部分*/
