@@ -85,6 +85,7 @@ input:focus {
   display: flex;
   /*justify-content: space-between;*/
   margin-bottom: 40px;
+  height: 35px;
 }
 
 /* ラベル */
@@ -235,10 +236,11 @@ section {
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
+    height: 60px;
   }
   /* ラベル */
   .label_cus {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   /* 入力フォーム テキスト用 */
   .field {
