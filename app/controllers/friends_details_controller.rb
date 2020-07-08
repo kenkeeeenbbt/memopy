@@ -1,6 +1,7 @@
 class FriendsDetailsController < ApplicationController
   before_action :redirect_to_login
-  before_action :set_friend
+  before_action :set_friend, only: [:create]
+  before_action :set_friends_detail, only: [:destroy]
 
   def new
     @friends_detail = FriendsDetail.new
@@ -17,6 +18,12 @@ class FriendsDetailsController < ApplicationController
     end
   end
 
+  def destroy
+    @friends_detail.destroy
+    flash[:success] = "削除しました。"
+    redirect_to @friends_detail.friend
+  end
+
     private
 
       def friends_detail_params
@@ -25,5 +32,9 @@ class FriendsDetailsController < ApplicationController
 
       def set_friend
         @friend = Friend.find(params[:id])
+      end
+
+      def set_friends_detail
+        @friends_detail = FriendsDetail.find(params[:id])
       end
 end

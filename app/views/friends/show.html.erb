@@ -13,6 +13,7 @@
       <div>
         <%= friends_detail.feature %>
         <%= friends_detail.content %>
+        <%= link_to '削除', friends_detail, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %>
       </div>
     <% end %>
   </div>

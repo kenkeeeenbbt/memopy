@@ -14,12 +14,17 @@
       <!-- ヘッダー開始 -->
       <header>
         <div class="icon">Memopy</div>
-          <p class="user-name"> ようこそゲストさん</p>
+          <% if current_user %>
+            <p class="user-name">
+              <%= "ようこそ#{@current_user.name}さん" %>
+            </p>
+          <% end %>
           <nav>
             <ul>
             <!-- ゲストユーザーとしてログイン時 -->
                 <li><a href="#" class="active">Memopyとは</a></li>
                 <% if logged_in? %>
+                  <li><%= link_to @current_user.name, user_path(@current_user) %></li>
                   <li><%= link_to "人物リスト", friends_path %></li>
                   <li><%= link_to "人物追加", new_friend_path %></li>
                   <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
@@ -63,6 +68,7 @@
             <!-- ゲストユーザーとしてログイン時 -->
             <li><a href="#">Memopyとは</a></li>
             <% if logged_in? %>
+              <li><%= link_to @current_user.name, user_path(@current_user) %></li>
               <li><%= link_to "人物リスト", friends_path %></li>
               <li><%= link_to "人物追加", new_friend_path %></li>
               <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
