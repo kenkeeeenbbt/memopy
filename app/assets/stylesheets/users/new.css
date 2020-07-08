@@ -1,7 +1,8 @@
 /*-- 共通設定 --*/
-input:focus{
+input:focus {
   box-shadow: none;
-  outline: none;}
+  outline: none;
+}
 
 /* フォントの設定 */
 
