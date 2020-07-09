@@ -123,6 +123,7 @@ input:focus {
   transform-origin: left;
   transform: translateY(0);
   transition: all .15s;
+  pointer-events: none;
 }
 
 /*偽プレースホルダーがフォーム上部へ移動する*/
