@@ -1,5 +1,10 @@
 /*-- 共通設定 --*/
 
+input:focus {
+  box-shadow: none;
+  outline: none;
+}
+
 /* フォントの設定 */
 
 .main_title {
@@ -48,8 +53,6 @@
   transform: translateY(-50%) translateX(-50%);
 }
 
-/*-- 自作パーツ --*/
-
 /*ヘッダー、メイン、フッターで構成した入力フォーム*/
 
 .form_wrapper {
@@ -71,8 +74,8 @@
 /*フォームのメインとなる真ん中の一番広い部分の設定*/
 
 .input_items {
-  margin: 0 20px;
-  width: calc(100% - 40px);
+  width: 560px;
+  margin: 40px auto;
 }
 
 /* ラベル + インプット部分の設定 */
@@ -80,8 +83,9 @@
 .input_item {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  /*justify-content: space-between;*/
+  margin-bottom: 40px;
+  height: 35px;
 }
 
 /* ラベル */
@@ -95,21 +99,57 @@
 
 /* 入力フォーム テキスト用 */
 
-.input_cus {
-  width: calc(100% - 210px);
-  -webkit-appearance: none;
-  border: 1px solid rgba(82, 78, 69, 0.5019607843137255);
-  border-radius: 5px;
-  color: #524e45;
-  font-family: inherit;
-  font-size: 1em;
-  padding: 0.4em 0.8em;
+.field {
+  position: relative;
+  width: 350px;
 }
 
-input:focus {
-  border: 1px solid rgba(0, 0, 0, 0.32);
-  box-shadow: none;
-  outline: none;
+.input_cus, .fake {
+  display: block;
+  font-size: 16px;
+}
+
+/*プレースホルダー風の文字の設定*/
+
+.fake {
+  padding: 0 8px;
+  cursor: text;
+  position: absolute;
+  top: 11px;
+  left: 13px;
+  background: #fff;
+  color: silver;
+  /*入力時にJavascriptで要素にClassを加えてアニメーションさせる*/
+  transform-origin: left;
+  transform: translateY(0);
+  transition: all .15s;
+  pointer-events: none;
+}
+
+/*偽プレースホルダーがフォーム上部へ移動する*/
+
+.move {
+  transform: translateY(-25px) scale(.8);
+}
+
+/*偽プレースホルダーの色が変更される*/
+
+.focus {
+  color: #1B74E8;
+}
+
+.input_cus {
+  width: 100%;
+  height: 45px;
+  padding: 0 12px;
+  border: 1px solid #ddd;
+  transition: all .15s;
+}
+
+/*フォーカスされるとフォームの周りが青くなる*/
+
+.input_cus.focus {
+  border: 2px solid #1B74E8;
 }
 
 /*フォームのボトム部分*/
@@ -181,25 +221,36 @@ section {
   .inner {
     width: 95%;
   }
-  /*-- 自作パーツ --*/
   /*ヘッダー、メイン、フッターで構成した入力フォーム*/
   .form_wrapper {
     width: 350px;
   }
+  /*フォームのメインとなる真ん中の一番広い部分の設定*/
+  .input_items {
+    width: 100%;
+    margin: 40px auto;
+    padding: 20px 10px;
+  }
   /* ラベル + インプット部分の設定 */
   .input_item {
-    width: 100%;
-    margin: 0 0 20px;
+    width: 330px;
+    display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
+    height: 60px;
   }
   /* ラベル */
   .label_cus {
     margin-bottom: 10px;
   }
   /* 入力フォーム テキスト用 */
+  .field {
+    width: 330px;
+  }
   .input_cus {
-    width: auto;
-    -webkit-appearance: none;
+    width: 310px;
+    height: 45px;
+    padding: 0 12px;
   }
   /* スマホサイズ時に、改行が行われるCSSクラスを実行 */
   .br_sp {
