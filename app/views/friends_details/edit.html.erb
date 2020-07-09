@@ -1,0 +1,16 @@
+<%= form_with(model: @friends_detail, url: {controller: 'friends_details', action: 'edit' }, local: true) do |f| %>
+  <div class="form_wrapper">
+    <div class="input_item">
+      <%= f.label :"feature", {class: 'label_cus'} %>
+      <%= f.text_field :feature, {class: 'input_cus'} %>
+    </div>
+    <div class="input_item">
+      <%= f.label :"content", {class: 'label_cus'} %>
+      <%= f.text_field :content, {class: 'input_cus'} %>
+    </div>
+    <!-- フォームのボトム部分 -->
+    <div class="form_bottom">
+      <%= f.submit "更新する", class: "btn btn_cus" %>
+    </div>
+  </div>
+<% end %>

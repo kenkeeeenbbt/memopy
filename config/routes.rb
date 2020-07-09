@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get '/friends/:id/new', to: 'friends_details#new', as: 'new_friends_detail'
   post '/friends/:id/new', to: 'friends_details#create'
+  patch '/friends_details/:id/edit', to: 'friends_details#update'
 
   resources :users
   resources :friends
