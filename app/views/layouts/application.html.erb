@@ -87,5 +87,13 @@
       </footer>
       <!-- フッター終了 -->
     </div>
+    <!-- フラッシュメッセージの自動削除 -->
+    <script>
+      $(function(){
+        $('.flash-message').fadeIn('slow', function() {
+          $(this).delay(2000).fadeOut('slow');
+        });
+      });
+    </script>
   </body>
 </html>

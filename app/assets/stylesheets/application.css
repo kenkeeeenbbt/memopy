@@ -43,6 +43,7 @@ body{
   padding-top:6px;
   height: 24px;
   font-size: 16px;
+  z-index: 20;
 }
 
 /* ==========ヘッダー開始========== */
