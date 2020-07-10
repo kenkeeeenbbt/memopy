@@ -4,35 +4,77 @@
   <div class="inner">
     <!--  ヘッダー、メイン、フッターの３分割で構成した入力フォーム -->
     <%= form_with scope: :session, url:login_path, local: true do |f| %>
-    <div class="form_wrapper">
-      <!-- フォームの上部の部分 -->
-      <div class="form_top">
-        <h2 class="section_title">ログイン</h2>
-        <h3 class="sub-title">Memopyをさっそく始めてみよう！</h3>
-      </div>
-      <!-- フォームのメイン部分 -->
-      <div class="input_items">
-        <!-- メールアドレスの入力アイテム -->
-        <div class="input_item">
-          <%= f.label :"メールアドレス", {class: 'label_cus'} %>
-          <%= f.email_field :email, {class: 'input_cus'} %>
+      <div class="form_wrapper">
+        <!-- フォームの上部の部分 -->
+        <div class="form_top">
+          <h2 class="section_title">ログイン</h2>
+          <h3 class="sub-title">次会うとき何話す？</h3>
         </div>
-        <!-- パスワードの入力アイテム -->
-        <div class="input_item">
-          <%= f.label :パスワード, {class: 'label_cus'} %>
-          <%= f.password_field :password, {class: 'input_cus'} %>
+        <!-- フォームのメイン部分 -->
+        <div class="input_items">
+          <!-- メールアドレスの入力アイテム -->
+          <div class="input_item">
+            <div class="label_wrapper">
+              <%= f.label :"メールアドレス", {class: 'label_cus'} %>
+              <span class='label_required'>必須</span>
+            </div>
+            <div class="field">
+              <div class="fake" id="fake">example@memopy.com</div>
+              <%= f.email_field :email, class: 'input_cus' %>
+            </div>
+          </div>
+          <!-- パスワードの入力アイテム -->
+          <div class="input_item">
+            <div class="label_wrapper">
+              <%= f.label :パスワード, class: 'label_cus' %>
+              <span class='label_required'>必須</span>
+            </div>
+            <div class="field">
+              <div class="fake" id="fake">半角英数で入力</div>
+              <%= f.password_field :password,class: 'input_cus' %>
+            </div>
+          </div>
+          <div class="checkBox_wrapper">
+            <!-- ログイン状態を維持するチェックボックス -->
+            <%= f.check_box :remember_me,  name: 'check', id: 'check', value: '' %>
+              <%= f.label :remember_me,class: 'check_label', for: "check" do %>
+                <form class="check_fake">
+                  <!-- チェックボックス を大きくして使いやすくする -->
+                  <span class="check_span">
+                  <!-- このスパンは、"checkbox" 要素を作成するために必要です。 -->
+                  </span>ログイン状態を維持する
+                </form>
+              <% end %>
+            <p>まだ登録お済みでない方は<br class="br_sp"><%= link_to "新規登録", signup_path %>からご登録ください。</p>
+          </div>
         </div>
-        <!-- ログイン状態を維持するチェックボックス -->
-        <%= f.label :remember_me,{class: 'label_cus'} do %>
-          <%= f.check_box :remember_me %>
-          <span>ログイン状態を維持する</span>
-        <% end %>
-        <p>まだ登録お済みでない方は<br class="br_sp"><%= link_to "新規登録", signup_path %>からご登録ください。</p>
-      </div>
-      <!-- フォームのボトム部分 -->
-      <div class="form_bottom">
-        <%= f.submit "ログインする", {class: 'btn btn_cus'} %>
+        <!-- フォームのボトム部分 -->
+        <div class="form_bottom">
+          <%= f.submit "ログインする", {class: 'btn btn_cus'} %>
+        </div>
       </div>
     <% end %>
   </div>
 </section>
+<script>
+//プレースホルダー風の文字のアニメーション
+var inputs = document.querySelectorAll('.field input')
+for (var i = 0, len = inputs.length; i < len; i++) {
+  var input = inputs.item(i)
+  input.addEventListener('click', (e) => {
+    var target = e.target
+    var label = target.previousElementSibling
+    target.classList.add('focus')
+    label.classList.add('move', 'focus')
+  })
+  input.addEventListener('blur', (e) => {
+    var target = e.target
+    var label = target.previousElementSibling
+    if (target.value.length === 0) {
+      label.classList.remove('move')
+    }
+    target.classList.remove('focus')
+    label.classList.remove('focus')
+  })
+}
+</script>

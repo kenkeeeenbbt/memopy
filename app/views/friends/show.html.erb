@@ -12,18 +12,11 @@
   <div class="show-wrapper">
     <h2 class="show-list-title">プロフィールリスト</h2>
     <% @friends_details.each do |friends_detail| %>
-      <div class="show-contents">
-        <h2 class="accordion-title"><a href="#"><%= friends_detail.feature %></a></h2>
-          <%#=========スライドダウンで表示===========%>
-          <div class="accordion-content">
-            <div class="FlexTextarea ">
-              <div class="FlexTextarea-dummy" aria-hidden="true">
-              </div>
-              <textarea id="FlexTextarea" class="FlexTextarea-textarea">
-                <%= friends_detail.content %>
-              </textarea>
-            </div>
-          </div>
+      <div>
+        <%= friends_detail.feature %>
+        <%= friends_detail.content %>
+        <%= link_to '編集', edit_friends_detail_path(friends_detail) %>
+        <%= link_to '削除', friends_detail, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %>
       </div>
     <% end %>
   </div>

@@ -43,6 +43,7 @@ body{
   padding-top:6px;
   height: 24px;
   font-size: 16px;
+  z-index: 20;
 }
 
 /* ==========ヘッダー開始========== */
@@ -55,6 +56,7 @@ header{
   width:100%;
   box-sizing:border-box;
   border-bottom: 0.8px solid #727069;
+z-index: 10;
 }
 
 header .icon{
@@ -167,6 +169,7 @@ footer{
   bottom: 0;
   width:100%;
   background:#524E45;
+z-index: 10;
 }
 
 footer nav ul{
