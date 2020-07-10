@@ -14,7 +14,10 @@
       <div class="input_items">
         <!-- メールアドレスの入力アイテム -->
         <div class="input_item">
-          <%= f.label :"メールアドレス", {class: 'label_cus'} %>
+          <div class="label_wrapper">
+            <%= f.label :"メールアドレス", {class: 'label_cus'} %>
+            <span class='label_required'>必須</span>
+          </div>
           <div class="field">
             <div class="fake" id="fake">example@memopy.com</div>
             <%= f.email_field :email, {class: 'input_cus'} %>
@@ -22,7 +25,10 @@
         </div>
         <!-- パスワードの入力アイテム -->
         <div class="input_item">
-          <%= f.label :パスワード, {class: 'label_cus'} %>
+          <div class="label_wrapper">
+            <%= f.label :パスワード, {class: 'label_cus'} %>
+            <span class='label_required'>必須</span>
+          </div>
           <div class="field">
             <div class="fake" id="fake">半角英数で入力</div>
             <%= f.password_field :password,{class: 'input_cus'} %>
