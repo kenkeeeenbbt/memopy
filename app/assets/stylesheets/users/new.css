@@ -236,6 +236,15 @@ section {
   width: 100%;
 }
 
+/* チェックボックス と新規登録案内の文を
+調整する */
+
+.checkBox_wrapper {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 /* ログイン状態を維持するボタンの設定 */
 
 .check_label {
@@ -380,9 +389,9 @@ input[type="checkbox"]:checked+label:hover .check_span:before {
   }
   /*フォームのメインとなる真ん中の一番広い部分の設定*/
   .input_items {
-    width: 100%;
-    margin: 40px auto;
-    padding: 20px 10px;
+    width: 340px;
+    margin: 40px auto 0;
+    padding: 20px 5px;
   }
   /* ラベル + インプット部分の設定 */
   .input_item {
@@ -393,6 +402,9 @@ input[type="checkbox"]:checked+label:hover .check_span:before {
     height: 60px;
   }
   /* ラベル */
+  .label_wrapper {
+    margin-bottom: 5px;
+  }
   .label_cus {
     margin-bottom: 10px;
   }
@@ -404,6 +416,9 @@ input[type="checkbox"]:checked+label:hover .check_span:before {
     width: 310px;
     height: 45px;
     padding: 0 12px;
+  }
+  .checkBox_wrapper {
+    width: 280px;
   }
   /* スマホサイズ時に、改行が行われるCSSクラスを実行 */
   .br_sp {
