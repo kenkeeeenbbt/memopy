@@ -341,7 +341,9 @@ input[type="checkbox"]:checked+label span:before {
   -webkit-transition: width 150ms ease 100ms;
   transition: width 150ms ease 100ms;
 }
+
 /*チェックが入ってかつホバー状態の設定*/
+
 input[type="checkbox"]:checked+label:hover span {
   background-color: #1b74e8;
   -webkit-transform: scale(1.25);
