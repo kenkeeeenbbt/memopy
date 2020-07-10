@@ -14,22 +14,22 @@
       <div class="input_items">
         <!-- メールアドレスの入力アイテム -->
         <div class="input_item">
-          <%= f.label :"メールアドレス", {class: 'label_cus'} %>
+          <%= f.label :"メールアドレス", class: 'label_cus' %>
           <div class="field">
             <div class="fake" id="fake">example@memopy.com</div>
-            <%= f.email_field :email, {class: 'input_cus'} %>
+            <%= f.email_field :email, class: 'input_cus', required: true %>
           </div>
         </div>
         <!-- パスワードの入力アイテム -->
         <div class="input_item">
-          <%= f.label :パスワード, {class: 'label_cus'} %>
+          <%= f.label :パスワード, class: 'label_cus' %>
           <div class="field">
             <div class="fake" id="fake">半角英数で入力</div>
-            <%= f.password_field :password,{class: 'input_cus'} %>
+            <%= f.password_field :password,class: 'input_cus', required: true %>
           </div>
         </div>
         <!-- ログイン状態を維持するチェックボックス -->
-        <%= f.label :remember_me,{class: 'label_cus'} do %>
+        <%= f.label :remember_me,class: 'label_cus' do %>
           <%= f.check_box :remember_me %>
           <span>ログイン状態を維持する</span>
         <% end %>
@@ -37,7 +37,7 @@
       </div>
       <!-- フォームのボトム部分 -->
       <div class="form_bottom">
-        <%= f.submit "ログインする", {class: 'btn btn_cus'} %>
+        <%= f.submit "ログインする", class: 'btn btn_cus' %>
       </div>
     <% end %>
   </div>
