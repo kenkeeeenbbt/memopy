@@ -83,25 +83,50 @@ input:focus {
 .input_item {
   width: 100%;
   display: flex;
-  /*justify-content: space-between;*/
+  justify-content: space-between;
   margin-bottom: 40px;
   height: 35px;
 }
 
 /* ラベル */
 
+.label_wrapper {
+  width: 200px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
 .label_cus {
-  width: 170px;
+  width: 160px;
   font-size: 16px;
   line-height: 24px;
   vertical-align: middle;
+}
+
+/* label横の「必須」 */
+
+.label_required {
+  background: #e81919;
+  border-radius: 6px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  line-height: 24px;
+  height: 24px;
+  font-weight: 700;
+  padding: 1px 8px;
+  width: 40px;
+  display: block;
+  pointer-events: none;
 }
 
 /* 入力フォーム テキスト用 */
 
 .field {
   position: relative;
-  width: 350px;
+  width: calc(100% - 220px - 20px);
 }
 
 .input_cus, .fake {
@@ -139,7 +164,7 @@ input:focus {
 }
 
 .input_cus {
-  width: 100%;
+  width: calc(100% - 20px);
   height: 45px;
   padding: 0 12px;
   border: 1px solid #ddd;
@@ -211,11 +236,148 @@ section {
   width: 100%;
 }
 
+/* チェックボックス と新規登録案内の文を
+調整する */
+
+.checkBox_wrapper {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ログイン状態を維持するボタンの設定 */
+
+.check_label {
+  display: inline-block;
+  /*「ログイン状態を維持する」文字色*/
+  color: #000;
+  cursor: pointer;
+  position: relative;
+}
+
+/*外枠の設定*/
+
+label .check_span {
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  border: 3px solid #1b74e8;
+  border-radius: 20%;
+  vertical-align: -6px;
+  margin-right: 10px;
+  -webkit-transition: background-color 150ms 200ms, -webkit-transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89);
+  transition: background-color 150ms 200ms, -webkit-transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89);
+  transition: background-color 150ms 200ms, transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89);
+  transition: background-color 150ms 200ms, transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89), -webkit-transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89);
+}
+
+/* レ点の左側の擬似要素 */
+
+label .check_span:before {
+  content: "";
+  width: 0px;
+  height: 2px;
+  border-radius: 2px;
+  background: #1b74e8;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 13px;
+  left: 9px;
+  -webkit-transition: width 50ms ease 50ms;
+  transition: width 50ms ease 50ms;
+  -webkit-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+
+/* レ点右側の設定 */
+
+label .check_span:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #1b74e8;
+  position: absolute;
+  -webkit-transform: rotate(305deg);
+  transform: rotate(305deg);
+  top: 16px;
+  left: 10px;
+  -webkit-transition: width 50ms ease;
+  transition: width 50ms ease;
+  -webkit-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+
+label:hover span:before {
+  width: 5px;
+  -webkit-transition: width 100ms ease;
+  transition: width 100ms ease;
+}
+
+label:hover span:after {
+  width: 10px;
+  -webkit-transition: width 150ms ease 100ms;
+  transition: width 150ms ease 100ms;
+}
+
+/* 本体のチェックボックス（通常隠し状態）  */
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked+label span {
+  background-color: #1b74e8;
+  -webkit-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+input[type="checkbox"]:checked+label span:after {
+  width: 10px;
+  background: #fff;
+  -webkit-transition: width 150ms ease 100ms;
+  transition: width 150ms ease 100ms;
+}
+
+input[type="checkbox"]:checked+label span:before {
+  width: 5px;
+  background: #fff;
+  -webkit-transition: width 150ms ease 100ms;
+  transition: width 150ms ease 100ms;
+}
+
+/*チェックが入ってかつホバー状態の設定*/
+
+input[type="checkbox"]:checked+label:hover span {
+  background-color: #1b74e8;
+  -webkit-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+input[type="checkbox"]:checked+label:hover span:after {
+  width: 10px;
+  background: #fff;
+  -webkit-transition: width 150ms ease 100ms;
+  transition: width 150ms ease 100ms;
+}
+
+input[type="checkbox"]:checked+label:hover .check_span:before {
+  width: 5px;
+  background: #fff;
+  -webkit-transition: width 150ms ease 100ms;
+  transition: width 150ms ease 100ms;
+}
+
 /*-- ログイン画面 終了 --*/
 
 /* メディアクエリの設定 スマホサイズ 開始 */
 
-@media (max-width:670px) {
+@media (max-width: 670px) {
   /* 位置調整のcss */
   /* inner */
   .inner {
@@ -227,9 +389,9 @@ section {
   }
   /*フォームのメインとなる真ん中の一番広い部分の設定*/
   .input_items {
-    width: 100%;
-    margin: 40px auto;
-    padding: 20px 10px;
+    width: 340px;
+    margin: 40px auto 0;
+    padding: 20px 5px;
   }
   /* ラベル + インプット部分の設定 */
   .input_item {
@@ -240,6 +402,9 @@ section {
     height: 60px;
   }
   /* ラベル */
+  .label_wrapper {
+    margin-bottom: 5px;
+  }
   .label_cus {
     margin-bottom: 10px;
   }
@@ -251,6 +416,9 @@ section {
     width: 310px;
     height: 45px;
     padding: 0 12px;
+  }
+  .checkBox_wrapper {
+    width: 280px;
   }
   /* スマホサイズ時に、改行が行われるCSSクラスを実行 */
   .br_sp {

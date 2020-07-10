@@ -11,7 +11,10 @@
         <div class="input_items">
           <!-- 名前の入力アイテム -->
           <div class="input_item">
-            <%= f.label :"お名前", {class: 'label_cus'} %>
+            <div class="label_wrapper">
+              <%= f.label :"お名前", class: 'label_cus' %>
+              <span class='label_required'>必須</span>
+            </div>
             <div class="field">
               <div class="fake" id="fake">（例）田中  太郎</div>
               <%= f.text_field :name, {class: 'input_cus'} %>
