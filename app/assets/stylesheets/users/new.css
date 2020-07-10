@@ -83,25 +83,50 @@ input:focus {
 .input_item {
   width: 100%;
   display: flex;
-  /*justify-content: space-between;*/
+  justify-content: space-between;
   margin-bottom: 40px;
   height: 35px;
 }
 
 /* ラベル */
 
+.label_wrapper {
+width: 200px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
 .label_cus {
-  width: 170px;
+  width: 160px;
   font-size: 16px;
   line-height: 24px;
   vertical-align: middle;
+}
+
+/* label横の「必須」 */
+
+.label_required {
+  background: #e81919;
+  border-radius: 6px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  line-height: 24px;
+  height: 24px;
+  font-weight: 700;
+  padding: 1px 8px;
+  width: 40px;
+  display: block;
+  pointer-events: none;
 }
 
 /* 入力フォーム テキスト用 */
 
 .field {
   position: relative;
-  width: 350px;
+  width: calc(100% - 220px - 20px);
 }
 
 .input_cus, .fake {
@@ -139,7 +164,7 @@ input:focus {
 }
 
 .input_cus {
-  width: 100%;
+  width: calc(100% - 20px);
   height: 45px;
   padding: 0 12px;
   border: 1px solid #ddd;
