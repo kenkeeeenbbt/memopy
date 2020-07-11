@@ -1,12 +1,22 @@
-<%= form_with(model: @friend, local: true) do |f| %>
-  <div>
-    <h2>編集</h2>
+<section class="edit_name">
+  <div class="inner">
+    <%= form_with(model: @friend, local: true) do |f| %>
+      <div class="form_wrapper">
+        <!-- フォームの上部の部分 -->
+        <div class="form_top">
+          <h2 class="section_title">人物の名前の編集</h2>
+        </div>
+        <!-- フォームのメイン部分 -->
+        <div class="input_items">
+          <div class="input_item">
+            <%= f.label :"お名前", class: 'label_cus' %>
+            <%= f.text_field :name, class: 'input_cus' %>
+        </div>
+        <div class=form_bottom>
+          <%= f.submit "更新する", class: 'btn btn_cus' %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div>
-    <%= f.label :"お名前" %>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.submit "更新する" %>
-  </div>
-<% end %>
+</section>
+<%= javascript_include_tag('form_ux.js') %>
