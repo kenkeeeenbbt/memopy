@@ -7,15 +7,17 @@
     <% @friends.each do |friend| %>
       <div class="friends">
         <%= link_to friend.name, friend ,class:"friends-name"%>
-        <%= link_to '編集', edit_friend_path(friend) %>
-        <%= link_to '削除', friend, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' },class:"friends-destroy"%>
+        <%= link_to edit_friend_path(friend) ,class:"name-edit-btn" do%>
+          <i class="fas fa-edit"></i>
+        <% end %>
+        <%= link_to friend, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' },class:"friends-destroy-btn" do%>
+          <i class="fas fa-backspace"></i>
+        <% end %>
       </div>
     <% end %>
     <%= link_to '人物追加', new_friend_path ,class:"friends-add-btn"%>
   </div>
 </div>
-
-
 <!--スクロール時に見出し要素をヘッダーに固定 -->
 <script>
 $(function() {

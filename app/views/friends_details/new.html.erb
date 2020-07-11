@@ -1,17 +1,32 @@
-<%= form_with(model: @friends_detail, url: {controller: 'friends_details', action: 'new' }, local: true) do |f| %>
-  <div class="form_wrapper">
-    <div class="input_item">
-      <%= f.label :"feature", {class: 'label_cus'} %>
-      <%= f.text_field :feature, {class: 'input_cus'} %>
-    </div>
-    <div class="input_item">
-      <%= f.label :"content", {class: 'label_cus'} %>
-      <%= f.text_field :content, {class: 'input_cus'} %>
-    </div>
-    <!-- フォームのボトム部分 -->
-    <div class="form_bottom">
-      <%= f.submit "登録する", class: "btn btn_cus" %>
-    </div>
+<section class="detail">
+  <div class="detail-inner">
+    <%= form_with(model: @friends_detail, url: {controller: 'friends_details', action: 'new' }, local: true) do |f| %>
+      <div class="detail-form-wrapper">
+        <!-- フォームの上部の部分 -->
+        <div class="detail-form-top">
+          <h2 class="detail-section-title">プロフィール情報追加</h2>
+          <h3 class="detail-sub-title">友達のことをメモしておこう</h3>
+        </div>
+        <!-- フォームのメイン部分 -->
+        <div class="detail-input-items">
+          <!-- 名前の入力アイテム -->
+          <div class="detail-input-item">
+            <%#<%= f.label :"情報名", {class: 'detail-label_cus'} %>
+            <p>情報名</p><br>
+            <%= f.text_field :feature, {class: 'detail-input-cus'} %>
+          </div>
+          <div class="detail-input-item">
+            <%#<%= f.label :"詳細内容", {class: 'detail-label_cus'} %>
+            <p>詳細内容</p>
+            <%= f.text_area :content, {class: 'detail-input-cus'} %>
+          </div>
+        </div>
+        <!-- フォームのボトム部分 -->
+        <div class="detail-form-bottom">
+          <%= f.submit "追加する", {class: 'detail-btn detail-btn-cus'} %>
+        </div>
+      </div>
+    <% end %>
+    <%= javascript_include_tag('form_ux.js') %>
   </div>
-<% end %>
-<%= javascript_include_tag('form_ux.js') %>
+</section>
