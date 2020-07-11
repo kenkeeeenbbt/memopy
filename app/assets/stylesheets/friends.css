@@ -226,7 +226,6 @@
 .friends-detail-content{
   display: none;
   font-size: 12px;
-  /* display: none; */
   padding: 5px 0px;
   margin-left:8px;
   margin-bottom: 15px;
@@ -238,10 +237,9 @@
 }
 
 
-/* 位置調整のcss */
+/* friends-detailの入力form画面　位置調整のcss */
 
 /* inner */
-
 .detail-inner {
   width: 90%;
   margin: 0 auto;
@@ -274,7 +272,6 @@
 }
 
 /* ラベル + インプット部分の設定 */
-
 .detail-input-item {
   width: 100%;
   display: flex;
@@ -283,7 +280,6 @@
 }
 
 /* ラベル */
-
 .detail-label-cus {
   width: 170px;
   font-size: 16px;
@@ -292,7 +288,6 @@
 }
 
 /* 入力フォーム テキスト用 */
-
 .detail-input-cus {
   width: calc(100% - 210px);
   -webkit-appearance: none;
@@ -304,14 +299,7 @@
   padding: 0.4em 0.8em;
 }
 
-input:focus {
-  border: 1px solid rgba(0, 0, 0, 0.32);
-  box-shadow: none;
-  outline: none;
-}
-
 /*フォームのボトム部分*/
-
 .detail-form-bottom {
   padding-bottom: 20px;
   height: auto;
@@ -320,10 +308,7 @@ input:focus {
   justify-content: center;
 }
 
-/* ボタン ログイン, 新規登録 */
-
-/* ボタン */
-
+/* friends-detailの登録と更新ボタン */
 .detail-btn-cus {
   font-size: 16px;
   display: inline-block;
@@ -337,30 +322,25 @@ input:focus {
   -webkit-appearance: none;
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 1);
 }
-
 .detail-btn-cus:hover, .detail-btn-cus:focus {
   opacity: 0.5;
   transition: 0.3s;
 }
-
 .detail-btn-cus::-moz-focus-inner {
   padding: 0;
   border: none;
 }
 
 /*-- 新規登録画面 開始 --*/
-
 .detail {
   width: 100%;
 }
-
 .detail-form-bottom {
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 /*-- 新規登録画面 終了 --*/
 
 /* メディアクエリの設定 スマホサイズ 開始 */
