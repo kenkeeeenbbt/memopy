@@ -17,13 +17,13 @@
             </div>
             <div class="field">
               <div class="fake" id="fake">（例）田中  太郎</div>
-              <%= f.text_field :name, {class: 'input_cus'} %>
+              <%= f.text_field :name, required: true, class: 'input_cus' %>
             </div>
           </div>
         </div>
         <!-- フォームのボトム部分 -->
         <div class="form_bottom">
-          <%= f.submit "追加する", {class: 'btn btn_cus'} %>
+          <%= f.submit "追加する", class: 'btn btn_cus' %>
         </div>
       </div>
     <% end %>
