@@ -1,7 +1,7 @@
 class FriendsController < ApplicationController
   before_action :current_user
   before_action :redirect_to_login
-  before_action :set_friend, only: [:show, :destroy]
+  before_action :set_friend, only: [:show, :edit, :update, :destroy]
   before_action :set_friends_details, only: [:show]
 
   def index
@@ -23,6 +23,19 @@ class FriendsController < ApplicationController
     else
       flash.now[:danger] = "失敗しました。"
       render 'new'
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @friend.update_attributes(friend_params)
+      flash[:success] = "更新しました。"
+      redirect_to @friend
+    else
+      flash.now[:danger] = "失敗しました。"
+      render 'edit'
     end
   end
 
