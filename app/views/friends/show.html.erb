@@ -8,44 +8,61 @@
     <%= link_to '追加', new_friends_detail_path ,class:"feature-add-btn"%>
     <%= link_to '戻る', friends_path ,class:"return-btn" %>
   </aside>
-  <%#==========プロフィール詳細情報に関するコード==========%>
-  <div class="show-wrapper">
-    <h2 class="show-list-title">プロフィールリスト</h2>
-    <% @friends_details.each do |friends_detail| %>
-      <div>
-        <%= friends_detail.feature %>
-        <%= friends_detail.content %>
-        <%= link_to '編集', edit_friends_detail_path(friends_detail) %>
-        <%= link_to '削除', friends_detail, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %>
-      </div>
-    <% end %>
+<%#==========プロフィール詳細情報に関するコード==========%>
+  <div class="detail-wrapper">
+    <h2 class="detail-list-title">プロフィールリスト</h2>
+    <ul id="detail-list">
+      <% @friends_details.each do |friends_detail| %>
+        <li class="detail-list-item">
+          <div class="friends-detail-feature">
+            <h3><%= friends_detail.feature %></h3>
+            <div class="detail-btn">
+              <%#=====friends-detail編集画面へのリンク=====%>
+              <%= link_to edit_friends_detail_path(friends_detail),class:"detail-edit-btn" do%>
+                <i class="fas fa-edit"></i>
+              <% end %>
+              <%#=====friends-detail削除のボタン=====%>
+              <%= link_to friends_detail, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' },class:"detail-destroy-btn" do%>
+                <i class="fas fa-backspace"></i>
+              <% end %>
+              <%#=====アコーディオンコンテンツが開くと「+」→「-」に変わる=====%>
+              <span>+</span>
+            </div>
+          </div>
+          <div class="friends-detail-content">
+            <p><%= friends_detail.content %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
 <%#=============== ここからJSコード ===============%>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
-//  =============== 人物詳細コンテンツのスライド表示 ===============
-  $('.accordion-title a').on('click', (e) => {
-    e.preventDefault();
-      const content = $(e.target)
-        .closest('.show-contents')
-        .find('.accordion-content');
-      if (!content.is(':visible')) {
-        content.slideDown(50);
-      }else{
-        content.slideUp(50);
+//  ============ プロフィール詳細情報をアコーディオンで表示 ============
+  $('.detail-list-item').click(function() {
+    const $content = $(this).find('.friends-detail-content');
+    if($content.hasClass('open')) {
+      $content.removeClass('open');
+      $content.slideUp();
+      $(this).find('span').text('+');
+    } else {
+      $content.addClass('open');
+      $content.slideDown();
+      $(this).find('span').text('-');
     }
   });
 //  =============== 見出しタイトルの固定 ===============
 $(function() {
-  var $win = $(window),
-      $main = $('main'),
-      $aside = $('aside'),
-      navHeight = $aside.outerHeight(),
-      navPos = $aside.offset().top,
-      fixedClass = 'is-fixed';
+  const $win = $(window),
+        $main = $('main'),
+        $aside = $('aside'),
+        navHeight = $aside.outerHeight(),
+        navPos = $aside.offset().top,
+        fixedClass = 'is-fixed';
   $win.on('load scroll', function() {
-    var value = $(this).scrollTop();
+    const value = $(this).scrollTop();
     if ( value > navPos ) {
       $aside.addClass(fixedClass);
       $main.css('margin-top', navHeight);
@@ -55,12 +72,4 @@ $(function() {
     }
   });
 });
-//  ===============テキストエリアの高さ自動調整===============
-function flexTextarea(el) {
-  const dummy = el.querySelector('.FlexTextarea-dummy')
-  el.querySelector('.FlexTextarea-textarea').addEventListener('input', e => {
-    dummy.textContent = e.target.value + '\u200b'
-  })
-}
-document.querySelectorAll('.FlexTextarea').forEach(flexTextarea)
 </script>
