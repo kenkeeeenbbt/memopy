@@ -173,7 +173,7 @@
 }
 
 /* friends-detailの編集、削除ボタンを覆うdiv要素 */
-.detail-btn{
+.detail-btns{
   display: block;
   text-decoration: none;
   flex:2;
@@ -182,7 +182,7 @@
 }
 
 /* link_toメソッドのフォントカラー変更 */
-.detail-btn a{
+.detail-btns a{
   color:#5f5d60;
 }
 
@@ -209,7 +209,7 @@
 }
 
 /* ボタン横の「+」マーク */
-.detail-btn span {
+.detail-btns span {
   position:absolute;
   top:4px;
   right:16px;
@@ -226,7 +226,7 @@
 .friends-detail-content{
   display: none;
   font-size: 12px;
-  display: none;
+  /* display: none; */
   padding: 5px 0px;
   margin-left:8px;
   margin-bottom: 15px;

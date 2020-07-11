@@ -11,7 +11,7 @@
       <%= link_to '戻る', friends_path ,class:"return-btn" %>
     </div>
   </aside>
-<%#==========プロフィール詳細情報に関するコード==========%>
+  <%#==========プロフィール詳細情報に関するコード==========%>
   <div class="detail-wrapper">
     <h2 class="detail-list-title">プロフィールリスト</h2>
     <ul id="detail-list">
@@ -19,13 +19,13 @@
         <li class="detail-list-item">
           <div class="friends-detail-feature">
             <h3><%= friends_detail.feature %></h3>
-            <div class="detail-btn">
+            <div class="detail-btns">
               <%#=====friends-detail編集画面へのリンク=====%>
-              <%= link_to edit_friends_detail_path(friends_detail),class:"detail-edit-btn" do%>
+              <%= link_to edit_friends_detail_path(friends_detail),class:"detail-btn detail-edit-btn" do%>
                 <i class="fas fa-edit"></i>
               <% end %>
               <%#=====friends-detail削除のボタン=====%>
-              <%= link_to friends_detail, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' },class:"detail-destroy-btn" do%>
+              <%= link_to friends_detail, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' },class:"detail-btn detail-destroy-btn" do%>
                 <i class="fas fa-backspace"></i>
               <% end %>
               <%#=====アコーディオンコンテンツが開くと「+」→「-」に変わる=====%>
@@ -44,18 +44,27 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 //  ============ プロフィール詳細情報をアコーディオンで表示 ============
-  $('.detail-list-item').click(function() {
-    const $content = $(this).find('.friends-detail-content');
-    if($content.hasClass('open')) {
-      $content.removeClass('open');
-      $content.slideUp();
-      $(this).find('span').text('+');
-    } else {
-      $content.addClass('open');
-      $content.slideDown();
-      $(this).find('span').text('-');
-    }
-  });
+var num = 0;
+$('.detail-btn').hover(
+  function(){
+    num = 1;
+  },
+  function(){
+    num = 0;
+  }
+);
+$('.detail-list-item').click(function() {
+  const $content = $(this).find('.friends-detail-content');
+  if($content.hasClass('open')) {
+    $content.removeClass('open');
+    $content.slideUp();
+    $(this).find('span').text('+');
+  } else if(num == 0){
+    $content.addClass('open');
+    $content.slideDown();
+    $(this).find('span').text('-');
+  }
+});
 //  =============== 見出しタイトルの固定 ===============
 $(function() {
   const $win = $(window),
