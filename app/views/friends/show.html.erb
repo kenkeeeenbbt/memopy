@@ -7,6 +7,7 @@
     <% end %>
     <h3>プロフィール</h3>
   </aside>
+  <%= link_to '編集', edit_friend_path %>
   <%= link_to '戻る', friends_path ,class:"return-btn" %>
   <div>
     <% @friends_details.each do |friends_detail| %>
