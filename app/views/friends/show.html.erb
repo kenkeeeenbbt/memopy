@@ -5,8 +5,11 @@
     <% else %>
       <a>表示できません。</a>
     <% end %>
-    <%= link_to '追加', new_friends_detail_path ,class:"feature-add-btn"%>
-    <%= link_to '戻る', friends_path ,class:"return-btn" %>
+    <div class="btn">
+      <%= link_to '名前の編集', edit_friend_path ,class:"name-edit-btn"%>
+      <%= link_to 'リスト追加', new_friends_detail_path ,class:"feature-add-btn"%>
+      <%= link_to '戻る', friends_path ,class:"return-btn" %>
+    </div>
   </aside>
 <%#==========プロフィール詳細情報に関するコード==========%>
   <div class="detail-wrapper">

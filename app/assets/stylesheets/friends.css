@@ -20,6 +20,7 @@
 #page-title h1{
   font-size:28px;
   margin-top: 0px;
+  margin-bottom:32px;
   color:#5f5d60;
 }
 
@@ -28,8 +29,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 11;
   width: 100%;
+  z-index:10;
 }
 
 /* 人物リスト全体に関するコード */
@@ -107,30 +108,11 @@
   transition: 0.3s;
 }
 
-/* 人物一覧ページへ戻るボタン */
-.return-btn{
+/* 見出し要素下部のボタン */
+.btn a{
   display: inline-block;
   background-color: #ef8040;
-  opacity: 0.9;
-  border: none;
-  border-radius: 6px;
-  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .2);
-  position: relative;
-  padding: 4px 24px;
-  margin-left: 24px;
-  margin-bottom: 16px;
-  color: #fff;
-  text-decoration: none;
-}
-.return-btn:hover{
-  opacity: 1;
-  transition: 0.3s;
-}
-
-/* 人物プロフィール情報を追加するボタン */
-.feature-add-btn{
-  display: inline-block;
-  background-color: #ef8040;
+  width:120px;
   opacity: 0.9;
   border: none;
   border-radius: 6px;
@@ -142,10 +124,11 @@
   color: #fff;
   text-decoration: none;
 }
-.feature-add-btn:hover{
+.btn a:hover{
   opacity: 1;
   transition: 0.3s;
 }
+
 
 /* 人物プロフィール全体に適用 */
 .detail-wrapper{

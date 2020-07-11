@@ -17,37 +17,16 @@
             </div>
             <div class="field">
               <div class="fake" id="fake">（例）田中  太郎</div>
-              <%= f.text_field :name, {class: 'input_cus'} %>
+              <%= f.text_field :name, required: true, class: 'input_cus' %>
             </div>
           </div>
         </div>
         <!-- フォームのボトム部分 -->
         <div class="form_bottom">
-          <%= f.submit "追加する", {class: 'btn btn_cus'} %>
+          <%= f.submit "追加する", class: 'btn btn_cus' %>
         </div>
       </div>
     <% end %>
   </div>
 </section>
-<script>
-//プレースホルダー風の文字のアニメーション
-var inputs = document.querySelectorAll('.field input')
-for (var i = 0, len = inputs.length; i < len; i++) {
-  var input = inputs.item(i)
-  input.addEventListener('click', (e) => {
-    var target = e.target
-    var label = target.previousElementSibling
-    target.classList.add('focus')
-    label.classList.add('move', 'focus')
-  })
-  input.addEventListener('blur', (e) => {
-    var target = e.target
-    var label = target.previousElementSibling
-    if (target.value.length === 0) {
-      label.classList.remove('move')
-    }
-    target.classList.remove('focus')
-    label.classList.remove('focus')
-  })
-}
-</script>
+<%= javascript_include_tag('form_ux.js') %>
