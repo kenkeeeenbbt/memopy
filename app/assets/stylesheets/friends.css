@@ -50,7 +50,7 @@
   height: 64px;
 }
 .friends:hover{
-  background-color: rgba(248, 248, 248, 0.801);
+  background-color:#fff1e0 ;
   transition: 0.2s;
   color:rgba(0, 0, 0, 1);
   border-bottom: 1px solid rgb(167, 164, 164);
@@ -71,22 +71,34 @@
   padding-top: 10px;
 }
 
-/* 人物削除に関するコード */
-.friends-destroy{
-  color:rgba(0, 0, 0, 0.5);
-  font-size: 12px;
-  padding-top: 40px;
-  padding-right: 20px;
-  text-decoration: none;
-  display: block;
+
+/* link_toメソッドのフォントカラー変更 */
+.friends a{
+  color:#5f5d60;
 }
-.friends-destroy:hover{
-  color:rgba(0, 0, 0, 1);
-  transition: 0.2s;
-  font-size:14px;
-  background: rgba(218, 85, 85, 0.856);
-  padding:24px 20px 0px 20px;
+
+/* friend-nameの編集ボタン */
+.name-edit-btn{
+  padding:17px 16px 9px 16px;
+  border-radius: 3px;
+  font-size:16px;
+}
+.name-edit-btn:hover{
+  background: #f18d53;
   color: white;
+  transition:0.3s;
+}
+
+/* friendsの削除ボタン */
+.friends-destroy-btn{
+  padding:18px 16px 9px 16px;
+  border-radius: 3px;
+  font-size:22px;
+}
+.friends-destroy-btn:hover{
+  background: #f18d53;
+  transition:0.3s;
+  color:white;
 }
 
 /* 人物追加ボタンに関するコード */
@@ -226,7 +238,6 @@
 .friends-detail-content{
   display: none;
   font-size: 12px;
-  /* display: none; */
   padding: 5px 0px;
   margin-left:8px;
   margin-bottom: 15px;
@@ -236,3 +247,146 @@
   margin-top:0;
   font-size:16px;
 }
+
+
+/* friends-detailの入力form画面　位置調整のcss */
+
+/* inner */
+.detail-inner {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  height: 100%;
+}
+
+/*ヘッダー、メイン、フッターで構成した入力フォーム*/
+.detail-form-wrapper {
+  box-shadow: -1px 2px 14px 0px;
+  width: 600px;
+  margin: 100px auto 120px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+/* フォームの上部の部分 */
+.detail-form-top {
+  margin-bottom: 40px;
+  background-color: #524E45;
+  padding: 20px 0;
+  border-radius: 15px 15px 0px 0px;
+  text-align: center;
+  color: white;
+}
+
+/*フォームのメインとなる真ん中の一番広い部分の設定*/
+.detail-input-items {
+  margin: 0 20px;
+  width: calc(100% - 40px);
+}
+
+/* ラベル + インプット部分の設定 */
+.detail-input-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* ラベル */
+.detail-label-cus {
+  width: 170px;
+  font-size: 16px;
+  line-height: 24px;
+  vertical-align: middle;
+}
+
+/* 入力フォーム テキスト用 */
+.detail-input-cus {
+  width: calc(100% - 210px);
+  -webkit-appearance: none;
+  border: 1px solid rgba(82, 78, 69, 0.5019607843137255);
+  border-radius: 5px;
+  color: #524e45;
+  font-family: inherit;
+  font-size: 1em;
+  padding: 0.4em 0.8em;
+}
+
+/*フォームのボトム部分*/
+.detail-form-bottom {
+  padding-bottom: 20px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* friends-detailの登録と更新ボタン */
+.detail-btn-cus {
+  font-size: 16px;
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: #ef8040;
+  color: #fff;
+  text-decoration: none;
+  border: solid 3px #f98948;
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 1);
+}
+.detail-btn-cus:hover, .detail-btn-cus:focus {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.detail-btn-cus::-moz-focus-inner {
+  padding: 0;
+  border: none;
+}
+
+/*-- 新規登録画面 開始 --*/
+.detail {
+  width: 100%;
+}
+.detail-form-bottom {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*-- 新規登録画面 終了 --*/
+
+/* メディアクエリの設定 スマホサイズ 開始 */
+
+@media (max-width:670px) {
+  /* 位置調整のcss */
+  /* inner */
+  .detail-inner {
+    width: 95%;
+  }
+  /*-- 自作パーツ --*/
+  /*ヘッダー、メイン、フッターで構成した入力フォーム*/
+  .detail-form-wrapper {
+    width: 350px;
+  }
+  /* ラベル + インプット部分の設定 */
+  .detail-input-item {
+    width: 100%;
+    margin: 0 0 20px;
+    flex-direction: column;
+  }
+  /* ラベル */
+  .detail-label-cus {
+    margin-bottom: 10px;
+  }
+  /* 入力フォーム テキスト用 */
+  .detail-input-cus {
+    width: auto;
+    -webkit-appearance: none;
+  }
+  /* スマホサイズ時に、改行が行われるCSSクラスを実行 */
+  .br-sp {
+    display: block;
+  }
+}
+
+/* メディアクエリの設定 スマホサイズ 終了*/

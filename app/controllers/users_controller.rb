@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
-  before_action :redirect_to_login, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_to_login, only: [:show, :edit, :update, :destroy]
 
   def show
   end
@@ -30,6 +30,12 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @user.destroy
+    flash[:success] = "削除しました。"
+    redirect_to root_path
   end
 
   private
