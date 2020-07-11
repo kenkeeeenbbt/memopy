@@ -1,23 +1,87 @@
 <div class="friends-wrapper">
   <aside id="page-title">
     <% if @friend.user_id == current_user.id %>
-      <h1><%= @friend.name %></h1>
+      <h1><%= @friend.name %>のプロフィール</h1>
     <% else %>
       <a>表示できません。</a>
     <% end %>
-    <h3>プロフィール</h3>
+    <div class="btn">
+      <%= link_to '名前の編集', edit_friend_path ,class:"name-edit-btn"%>
+      <%= link_to 'リスト追加', new_friends_detail_path ,class:"feature-add-btn"%>
+      <%= link_to '戻る', friends_path ,class:"return-btn" %>
+    </div>
   </aside>
-  <%= link_to '編集', edit_friend_path %>
-  <%= link_to '戻る', friends_path ,class:"return-btn" %>
-  <div>
-    <% @friends_details.each do |friends_detail| %>
-      <div>
-        <%= friends_detail.feature %>
-        <%= friends_detail.content %>
-        <%= link_to '編集', edit_friends_detail_path(friends_detail) %>
-        <%= link_to '削除', friends_detail, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } %>
-      </div>
-    <% end %>
+  <%#==========プロフィール詳細情報に関するコード==========%>
+  <div class="detail-wrapper">
+    <h2 class="detail-list-title">プロフィールリスト</h2>
+    <ul id="detail-list">
+      <% @friends_details.each do |friends_detail| %>
+        <li class="detail-list-item">
+          <div class="friends-detail-feature">
+            <h3><%= friends_detail.feature %></h3>
+            <div class="detail-btns">
+              <%#=====friends-detail編集画面へのリンク=====%>
+              <%= link_to edit_friends_detail_path(friends_detail),class:"detail-btn detail-edit-btn" do%>
+                <i class="fas fa-edit"></i>
+              <% end %>
+              <%#=====friends-detail削除のボタン=====%>
+              <%= link_to friends_detail, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' },class:"detail-btn detail-destroy-btn" do%>
+                <i class="fas fa-backspace"></i>
+              <% end %>
+              <%#=====アコーディオンコンテンツが開くと「+」→「-」に変わる=====%>
+              <span>+</span>
+            </div>
+          </div>
+          <div class="friends-detail-content">
+            <p><%= friends_detail.content %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
-  <%= link_to 'feature、contentを追加', new_friends_detail_path %>
 </div>
+<%#=============== ここからJSコード ===============%>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+//  ============ プロフィール詳細情報をアコーディオンで表示 ============
+var num = 0;
+$('.detail-btn').hover(
+  function(){
+    num = 1;
+  },
+  function(){
+    num = 0;
+  }
+);
+$('.detail-list-item').click(function() {
+  const $content = $(this).find('.friends-detail-content');
+  if($content.hasClass('open')) {
+    $content.removeClass('open');
+    $content.slideUp();
+    $(this).find('span').text('+');
+  } else if(num == 0){
+    $content.addClass('open');
+    $content.slideDown();
+    $(this).find('span').text('-');
+  }
+});
+//  =============== 見出しタイトルの固定 ===============
+$(function() {
+  const $win = $(window),
+        $main = $('main'),
+        $aside = $('aside'),
+        navHeight = $aside.outerHeight(),
+        navPos = $aside.offset().top,
+        fixedClass = 'is-fixed';
+  $win.on('load scroll', function() {
+    const value = $(this).scrollTop();
+    if ( value > navPos ) {
+      $aside.addClass(fixedClass);
+      $main.css('margin-top', navHeight);
+    } else {
+      $aside.removeClass(fixedClass);
+      $main.css('margin-top', '0');
+    }
+  });
+});
+</script>
