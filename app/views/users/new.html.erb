@@ -19,7 +19,7 @@
             </div>
             <div class="field">
               <div class="fake" id="fake">（例）田中  太郎</div>
-              <%= f.text_field :name, class: 'input_cus', id: 'input_cus' %>
+              <%= f.text_field :name, class: 'input_cus', required: true, id: 'input_cus' %>
             </div>
           </div>
           <!-- メールアドレスの入力アイテム -->
@@ -30,7 +30,7 @@
             </div>
             <div class="field">
               <div class="fake" id="fake">example@memopy.com</div>
-              <%= f.email_field :email, class: 'input_cus', id: 'input_cus' %>
+              <%= f.email_field :email, class: 'input_cus', required: true, id: 'input_cus' %>
             </div>
           </div>
           <!-- パスワードの入力アイテム -->
@@ -41,7 +41,7 @@
             </div>
             <div class="field">
               <div class="fake" id="fake">半角英数で入力</div>
-              <%= f.password_field :password, class: 'input_cus' %>
+              <%= f.password_field :password, required: true, class: 'input_cus' %>
             </div>
           </div>
           <!-- パスワード（確認）の入力アイテム -->
@@ -52,7 +52,7 @@
             </div>
             <div class="field">
               <div class="fake" id="fake">パスワードを再入力</div>
-              <%= f.password_field :password_confirmation, class: 'input_cus' %>
+              <%= f.password_field :password_confirmation, required: true, class: 'input_cus' %>
             </div>
           </div>
         </div>
