@@ -129,7 +129,6 @@
   transition: 0.3s;
 }
 
-
 /* 人物プロフィール全体に適用 */
 .detail-wrapper{
   width:560px;
@@ -140,8 +139,8 @@
 
 /* プロフィールリストタイトル */
 .detail-list-title{
-  padding:0;
-  margin-bottom:16px;
+  padding-top:16px;
+  margin-bottom:32px;
 }
 
 /* リスト要素のリセットCSS */
@@ -149,19 +148,21 @@
   list-style: none;
 }
 
+/* friends-detailのリスト要素全体 */
 .detail-list-item {
   position:relative;
   cursor:pointer;
   border-bottom:1px solid #ccc;
 }
+.detail-list-item:hover{
+  background-color:#fff1e0 ;
+  transition: 0.3s;
+  color:black;
+}
 
-/* friends-detail-featureに関するコード */
+/* friends-detail-feature表示部分のコード */
 .friends-detail-feature{
   display: flex;
-}
-.friends-detail-feature:hover{
-  background-color:#f3f3f3 ;
-  transition: 0.3s;
 }
 .friends-detail-feature h3{
   font-size: 18px;
@@ -191,7 +192,7 @@
   border-radius: 3px;
 }
 .detail-edit-btn:hover{
-  background: rgb(184, 184, 184);
+  background: #f18d53;
   color: white;
   transition:0.3s;
 }
@@ -202,7 +203,7 @@
   border-radius: 3px;
 }
 .detail-destroy-btn:hover{
-  background:  rgb(184, 184, 184);
+  background: #f18d53;
   transition:0.3s;
   color:white;
 }
@@ -230,4 +231,7 @@
   margin-left:8px;
   margin-bottom: 15px;
   text-align: left;
+}
+.friends-detail-content p{
+  margin-top:0;
 }
