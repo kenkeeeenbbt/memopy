@@ -5,27 +5,27 @@
     <h2>今度会うとき、何話す？</h2>
   </aside>
   <section class="friends-show-wrapper">
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <% if @user == current_user %>
-          <div>
-            <%= link_to friends_path ,class:"friends-index-btn" do%>
-            <i class="fas fa-address-book"></i>
-            <p>友達リストへ</p>
-            <% end %>
-          </div>
-          <div>
-            <%= link_to 'ユーザー情報の編集', edit_user_path ,class:"user-btn"%>
-          </div>
-          <div>
-            <%= link_to 'アカウントを削除する', @user, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } ,class:"user-btn"%>
-          </div>
-        <% else %>
-          <a>表示できません。</a>
-        <% end %>
-      </section>
-    </aside>
+    <div class="row">
+      <aside class="col-md-4">
+        <section class="user_info">
+          <% if @user == current_user %>
+            <div>
+              <%= link_to friends_path ,class:"friends-index-btn" do%>
+                <i class="fas fa-address-book"></i>
+                <p>友達リストへ</p>
+              <% end %>
+            </div>
+            <div>
+              <%= link_to 'ユーザー情報の編集', edit_user_path ,class:"user-btn"%>
+            </div>
+            <div>
+              <%= link_to 'アカウントを削除する', @user, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } ,class:"user-btn"%>
+            </div>
+          <% else %>
+            <a>表示できません。</a>
+          <% end %>
+        </section>
+      </aside>
     </section>
   </div>
 </div>
