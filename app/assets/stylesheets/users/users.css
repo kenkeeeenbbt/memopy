@@ -1,0 +1,54 @@
+/* ユーザー詳細コンテンツ全体に適用 */
+.friends-show-wrapper{
+  width:480px;
+  margin:0 auto;
+  text-align: center;
+}
+
+/* 友達リストへのボタン */
+.friends-index-btn{
+  margin-top: 56px;
+  display: inline-block;
+  padding: 0.6em 2em;
+  background-color: #f1f1efea;
+  opacity: 0.9;
+  color:#3b3a3b;
+  text-decoration: none;
+  border: none;
+  border-radius: 12px;
+  -webkit-appearance: none;
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .2);
+  font-size:24px;
+  width:328px;
+}
+.friends-index-btn:hover{
+  opacity: 1;
+  transition: 0.3s;
+  background-color: #524E45;
+  color: #fff;
+}
+.fa-address-book{
+  margin-top: 32px;
+  font-size:120px;
+}
+
+/* ユーザー編集、削除ボタン */
+.user-btn{
+  margin-top: 40px;
+  display: inline-block;
+  padding: 0.6em 2em;
+  background-color: #ef8040;
+  opacity: 0.9;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .2);
+  font-size:16px;
+  width:220px;
+}
+.user-btn:hover{
+  opacity: 1;
+  transition: 0.5s;
+}
