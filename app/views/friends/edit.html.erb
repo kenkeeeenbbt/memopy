@@ -9,8 +9,12 @@
         <!-- フォームのメイン部分 -->
         <div class="input_items">
           <div class="input_item">
-            <%= f.label :"お名前", class: 'label_cus' %>
-            <%= f.text_field :name, class: 'input_cus' %>
+            <div class="label_wrapper">
+              <%= f.label :"お名前", class: 'label_cus' %>
+            </div>
+            <div class="field">
+              <%= f.text_field :name, class: 'input_cus' %>
+            </div>
           </div>
         </div>
         <div class=form_bottom>
