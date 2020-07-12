@@ -314,7 +314,7 @@
 
 /* 入力フォーム テキスト用 */
 .detail-input-cus {
-  width: calc(100% - 210px);
+  width: 320px;
   -webkit-appearance: none;
   border: 1px solid rgba(82, 78, 69, 0.5019607843137255);
   border-radius: 5px;
@@ -393,7 +393,7 @@
   }
   /* 入力フォーム テキスト用 */
   .detail-input-cus {
-    width: auto;
+    width: 280px;
     -webkit-appearance: none;
   }
   /* スマホサイズ時に、改行が行われるCSSクラスを実行 */
