@@ -18,7 +18,7 @@ class FriendsController < ApplicationController
   def create
     @friend = current_user.friends.build(friend_params)
     if @friend.save
-      flash[:success] = "人物を追加しました。"
+      flash[:success] = "友達を追加しました。"
       redirect_to friends_url
     else
       flash.now[:danger] = "失敗しました。"

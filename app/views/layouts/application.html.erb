@@ -26,8 +26,8 @@
                 <li><a href="#" class="active">Memopyとは</a></li>
                 <% if logged_in? %>
                   <li><%= link_to @current_user.name, user_path(@current_user) %></li>
-                  <li><%= link_to "人物リスト", friends_path %></li>
-                  <li><%= link_to "人物追加", new_friend_path %></li>
+                  <li><%= link_to "友達リスト", friends_path %></li>
+                  <li><%= link_to "友達追加", new_friend_path %></li>
                   <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
                 <% else %>
                   <li><%= link_to "新規登録", signup_path %></li>
@@ -70,8 +70,8 @@
             <li><a href="#">Memopyとは</a></li>
             <% if logged_in? %>
               <li><%= link_to @current_user.name, user_path(@current_user) %></li>
-              <li><%= link_to "人物リスト", friends_path %></li>
-              <li><%= link_to "人物追加", new_friend_path %></li>
+              <li><%= link_to "友達リスト", friends_path %></li>
+              <li><%= link_to "友達追加", new_friend_path %></li>
               <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
             <% else %>
               <li><%= link_to "新規登録", signup_path %></li>
