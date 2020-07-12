@@ -7,7 +7,7 @@
     <% @friends.each do |friend| %>
       <div class="friends">
         <%= link_to friend.name, friend ,class:"friends-name"%>
-        <%= link_to edit_friend_path(friend) ,class:"name-edit-btn" do%>
+        <%= link_to edit_friend_path(friend) ,class:"name-edit-btn-icon" do%>
           <i class="fas fa-edit"></i>
         <% end %>
         <%= link_to friend, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' },class:"friends-destroy-btn" do%>

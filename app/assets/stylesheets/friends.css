@@ -103,6 +103,16 @@
   transition:0.3s;
   color:white;
 }
+.name-edit-btn-icon{
+  padding:17px 16px 9px 16px;
+  border-radius: 3px;
+  font-size:22px;
+}
+.name-edit-btn-icon:hover{
+  background: #f18d53;
+  color: white;
+  transition:0.3s;
+}
 
 /* 人物追加ボタンに関するコード */
 .friends-add-btn{
