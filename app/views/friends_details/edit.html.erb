@@ -11,14 +11,16 @@
         <div class="detail-input-items">
           <!-- 名前の入力アイテム -->
           <div class="detail-input-item">
-            <%#<%= f.label :"情報名", {class: 'detail-label_cus'} %>
             <p>情報名</p><br>
-            <%= f.text_field :feature, {class: 'detail-input-cus'} %>
+            <div class="detail-field">
+              <%= f.text_area :feature, {class: 'detail-input-cus'} %>
+            </div>
           </div>
           <div class="detail-input-item">
-            <%#<%= f.label :"詳細内容", {class: 'detail-label_cus'} %>
             <p>詳細内容</p>
-            <%= f.text_area :content, {class: 'detail-input-cus'} %>
+            <div class="detail-field">
+              <%= f.text_area :content, {class: 'detail-input-cus'} %>
+            </div>
           </div>
         </div>
         <!-- フォームのボトム部分 -->
