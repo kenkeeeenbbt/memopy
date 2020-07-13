@@ -53,6 +53,7 @@
         <!-- フォームのボトム部分 -->
         <div class="form_bottom">
           <%= f.submit "ログインする", class: 'btn btn_cus' %>
+          <%= link_to 'ゲストログイン', guest_login_path, method: :post, class: 'btn btn_cus' %>
         </div>
       </div>
     <% end %>

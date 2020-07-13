@@ -20,4 +20,11 @@ class SessionsController < ApplicationController
     flash[:success] = "ログアウトしました。"
     redirect_to root_url
   end
+
+  def new_guest
+    user = User.guest
+    log_in user
+    flash[:success] = "ゲストユーザーとしてログインしました。"
+    redirect_to friends_path
+  end
 end
