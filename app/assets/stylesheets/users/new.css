@@ -194,7 +194,8 @@ input:focus {
 .btn_cus {
   font-size: 16px;
   display: inline-block;
-  padding: 12px 32px;
+  padding: 8px 16px;
+  margin:0 18px;
   background-color: #ef8040;
   color: #fff;
   text-decoration: none;
