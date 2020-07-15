@@ -1,10 +1,13 @@
 class FriendsController < ApplicationController
   before_action :current_user
-  before_action :redirect_to_login
+  before_action :redirect_to_login, except: [:index]
   before_action :set_friend, only: [:show, :edit, :update, :destroy]
   before_action :set_friends_details, only: [:show]
 
   def index
+    if current_user.nil?
+      new_guest
+    end
     @friends = current_user.friends
   end
 
