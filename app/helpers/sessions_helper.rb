@@ -51,4 +51,12 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  # ゲストユーザーとしてログイン
+  def new_guest
+    user = User.guest
+    log_in user
+    flash[:success] = "ゲストユーザーとしてログインしました。"
+    redirect_to friends_path
+  end
 end
