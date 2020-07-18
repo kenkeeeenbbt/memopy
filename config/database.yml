@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: memopy_production
-  username: memopy
-  password: <%= ENV['MEMOPY_DATABASE_PASSWORD'] %>
+  username: root
+  password: Memopypass3!
