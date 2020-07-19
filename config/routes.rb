@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'friends#index'
+  get  '/about',  to: 'home#about'
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
 

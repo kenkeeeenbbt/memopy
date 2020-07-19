@@ -23,7 +23,7 @@
           <nav>
             <ul>
             <!-- ゲストユーザーとしてログイン時 -->
-                <li><a href="#" class="active">Memopyとは</a></li>
+                <li><%= link_to "Memopyとは", about_path %></li>
                 <% if logged_in? %>
                   <li><%= link_to @current_user.name, user_path(@current_user) %></li>
                   <li><%= link_to "友達リスト", friends_path %></li>
