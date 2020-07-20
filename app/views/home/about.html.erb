@@ -1,6 +1,215 @@
-<div class="about-wrapper">
-  <div class="lp-title">
-    <h1>Home#about</h1>
-    <h2>Memopyとは</h2>
-  <div>
-</div>
+  <main class="main">
+    <!-- top 開始 -->
+    <section class="top" id="top">
+      <div class="about-inner">
+        <div class="title_wrapper">
+          <h1 class="main_title">Memopy</h1>
+          <h2 class="subtitle">今度会う時、なに話す？</h2>
+        </div>
+        <div class="btn_items">
+          <li><%= link_to "新規登録", signup_path ,class:"about-btn"%></li>
+          <li><%= link_to "ログイン", login_path ,class:"about-btn"%></li>
+        </div>
+      </div>
+    </section>
+    <!-- top 終了 -->
+    <!-- about 開始 -->
+    <section class="about" id="about">
+      <div class="about-inner">
+        <h2 class="catchCopy">Memopyとは</h2>
+        <p class="about_txt">
+          あなたの友達、知人、仕事仲間のことを覚えてくれる人物像特化型メモ帳アプリ
+        </p>
+      </div>
+    </section>
+    <!-- about 終了 -->
+    <!-- experience 開始 -->
+    <section class="experience" data-fadeIn id="experience">
+      <div class="about-inner">
+        <h3 class="catchCopy">こんな経験<br class="sp">ありませんか？</h3>
+        <div class="experience_box">
+          <div class="experience_txtArea">
+            <h3 class="experience_txt">困りごとテキスト</h3>
+            <h3 class="experience_txt">困りごとテキスト</h3>
+            <h3 class="experience_txt">困りごとテキスト</h3>
+          </div>
+          <img src="/images/exp1.png" alt="こんな経験ありませんか？" class="experience_img">
+        </div>
+      </div>
+    </section>
+    <!-- experience 終了 -->
+    <!-- service 開始 -->
+    <section class="service" data-fadeIn id="service">
+      <h2 class="catchCopy">Memopyで解決！</h2>
+      <div class="about-inner">
+        <!-- カードアイテムのエリア -->
+        <ul class="card__items" id="card1">
+          <li class="card__item">
+            <div class="media">
+              <div class="media__img"><img src="/images/svc5.png" alt="「イイね！」機能を搭載！"></div>
+              <!-- /.media__img -->
+              <div class="media__body">
+                <div class="media__title">メモリストに「イイね！」機能を搭載！</div>
+                <!-- /.media__title -->
+                <div class="media__content">自分と共通話題があれば「イイね」をして
+                  内容をイイね一覧に残しておこう！</div>
+                <!-- /.media__content -->
+              </div>
+              <!-- /.media__body -->
+            </div>
+            <!-- /.media -->
+          </li>
+          <!-- /.card__item -->
+          <li class="card__item" id="card2">
+            <div class="media">
+              <div class="media__img"><img src="/images/svc3.png" alt="地元のトークから話題を広げてみよう！"></div>
+              <!-- /.media__img -->
+              <div class="media__body">
+                <div class="media__title">地元の名所を
+                  ポップアップで表示！</div>
+                <!-- /.media__title -->
+                <div class="media__content">出身地に入力するとお気に入りの場所を表示！地元のトークから話題を広げてみよう！</div>
+                <!-- /.media__content -->
+              </div>
+              <!-- /.media__body -->
+            </div>
+            <!-- /.media -->
+          </li>
+          <!-- /.card__item -->
+          <li class="card__item" id="card3">
+            <div class="media">
+              <div class="media__img"><img src="/images/svc4.png" alt="人物像に特化したメモリスト"></div>
+              <!-- /.media__img -->
+              <div class="media__body">
+                <div class="media__title">人物像に特化したメモリスト</div>
+                <!-- /.media__title -->
+                <div class="media__content">覚えてもらえると嬉しいですよね。
+                  次会う時に「○○の調子はどうですか？」と聞かれると喜ばれるかも！</div>
+                <!-- /.media__content -->
+              </div>
+              <!-- /.media__body -->
+            </div>
+            <!-- /.media -->
+          </li>
+          <!-- /.card__item -->
+        </ul>
+      </div>
+    </section>
+    <!-- service 終了 -->
+    <!-- support 開始 -->
+    <section class="support" data-fadeIn id="support">
+      <div class="about-inner">
+        <h2 class="catchCopy">人に喜ばれる <br class="br_tab"> ビジネスパーソンを目指して<br class="br_tab">成長し続けるあなたを
+          <br class="br_tab">Memopyはサポートします！</h2>
+      </div>
+      <img src="/images/spt1.png" alt="成長し続けるあなたをMemopyはサポートします" class="support_img">
+    </section>
+    <!-- support 終了 -->
+  </main>
+
+
+  <!---------------------- モーダル ---------------------->
+  <!--------- モーダル【１】 --------->
+  <ul class="modal_area">
+    <!-- モーダル全体の設定 -->
+    <div class="modal_wrap" id="modal1">
+      <!-- モーダルのインナー -->
+      <div class="modal_inner">
+        <!-- モーダルイメージ -->
+        <img src="/images/svc5.png" alt="" class="modal_img">
+        <!-- モーダルのテキスト表示部分 -->
+        <div class="modal_txt_area">
+          <!-- モーダルタイトル -->
+          <h3 class="modal_title catchCopy">モーダルタイトル</h3>
+          <!-- モーダルのテキスト -->
+          <p class="modal_txt about_txt">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        </div>
+        <!-- クローズボタン -->
+        <div class="modal_close">✖️</div>
+      </div>
+    </div>
+    <!--------- モーダル【2】 --------->
+    <!-- モーダル全体の設定 -->
+    <div class="modal_wrap" id="modal2">
+      <!-- モーダルのインナー -->
+      <div class="modal_inner">
+        <!-- モーダルイメージ -->
+        <img src="/images/svc3.png" alt="" class="modal_img">
+        <!-- モーダルのテキスト表示部分 -->
+        <div class="modal_txt_area">
+          <!-- モーダルタイトル -->
+          <h3 class="modal_title catchCopy">モーダルタイトル</h3>
+          <!-- モーダルのテキスト -->
+          <p class="modal_txt about_txt">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        </div>
+        <!-- クローズボタン -->
+        <div class="modal_close">✖️</div>
+      </div>
+    </div>
+    <!--------- モーダル【3】 --------->
+    <!-- モーダル全体の設定 -->
+    <div class="modal_wrap" id="modal3">
+      <!-- モーダルのインナー -->
+      <div class="modal_inner">
+        <!-- モーダルイメージ -->
+        <img src="/images/svc4.png" alt="" class="modal_img">
+        <!-- モーダルのテキスト表示部分 -->
+        <div class="modal_txt_area">
+          <!-- モーダルタイトル -->
+          <h3 class="modal_title catchCopy">モーダルタイトル</h3>
+          <!-- モーダルのテキスト -->
+          <p class="modal_txt about_txt">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        </div>
+        <!-- クローズボタン -->
+        <div class="modal_close">✖️</div>
+      </div>
+    </div>
+  </ul>
+  <!---------------------- モーダル ---------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  //ハンバーガーメニュー=================================
+//クリックでハンバーガーメニューのアニメが発火
+// $('.menu_trigger').on('click', function () {
+//   $('.menu_trigger').toggleClass('active');
+//   $('.menu').toggleClass('menu_active');
+
+//   // ×やモーダルの背景をクリックした時
+//   $('.main').on('click', (function () {
+//   $('.menu').toggleClass('menu_active');// メニューを非表示にする
+//   }));
+
+// });
+// // ローディングアニメーション===========================
+// $(window).on("load", function () {
+//   setTimeout(function () {
+//     $('.loader_screen').fadeOut();
+//   }, 600)
+// });
+// //スクロールするたびに起こるアニメーション================
+// $(window).on("scroll", function () {
+//   //フェードイン
+//   $('[data-fadeIn]').each(function (index, el) {
+//     if ($(window).scrollTop() > ($(el).offset().top - $(window).height() / 2)) {
+//       $(el).addClass('is_over');
+//     }
+//   });
+// });
+//複数モーダルの制御===================================
+// モーダルが複数ある場合
+$(function () {
+  // モーダルのボタンをクリックした時
+  $('.card__items .card__item').on('click', function (e) { //eタグはeventのこと
+    //「ブラウザのイベントを打ち消す」記述
+    e.preventDefault();
+    var cardIndex = $(this).index(); // 何番目のモーダルカードかを取得
+    //モーダルをフェードで表示// クリックしたモーダルボタンと同じ番目のモーダルを表示する
+    $('.modal_area .modal_wrap').eq(cardIndex).fadeToggle();
+  });
+  // ×やモーダルの背景をクリックした時
+  $('.modal_wrap, .modal_close').on('click', (function () {
+    $('.modal_wrap').fadeOut(); // モーダルを非表示にする
+  }));
+});
+  </script>
+  <script src="/script_lp.js"></script>

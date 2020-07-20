@@ -1,0 +1,366 @@
+@charset "UTF-8";
+/*== 基本設定 開始 ==*/
+
+.catchCopy {
+  font-size: 40px;
+  text-align: center;
+  color: #000000;
+  font-weight: bold;
+  font-family: Yuppy SC;
+  margin: 40px 0 40px 0;
+}
+
+/* PCサイズで改行を行わない */
+
+.br_sp {
+  display: none;
+}
+
+/*-- catchCopy 終了 --*/
+
+/*== 基本設定 ==*/
+
+li{
+  list-style: none;
+}
+
+/*-- btn の設定 開始--*/
+
+.about-btn {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 900;
+  color: #ffffff;
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .3);
+  border-radius: 10px;
+  padding: 15px 30px;
+  border: solid 2px;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.about-btn:hover {
+  color: #ef8040;
+  border: solid 2px #fff;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.about-btn:active {
+  box-shadow: 0 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+
+/*-- btn の設定 終了 --*/
+
+/*== 共通の位置調整用CSS 開始　==*/
+
+/*基本的な要素を中央寄せにするinner*/
+
+.about-inner {
+  width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/*position:relative;の親要素に対して、中央寄せを行う*/
+
+/* タブレットサイズになるまで改行を行わない */
+
+.br_tb {
+  display: none;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%)translateX(-50%);
+}
+
+
+/*== 共通の位置調整用CSS 終了　==*/
+
+/*== セクションごとの設定 開始　==*/
+.menu{
+display: none;
+}
+
+/*-- トップ 開始　--*/
+
+.top {
+  background-image: url("/images/top_mv.png");
+  background-position: 24% center;
+  background-size: cover;
+  height: 720px;
+  position: relative;
+}
+
+/*-- main_title 開始　--*/
+
+.main_title {
+  font-size: 120px;
+  color: #ffff;
+  text-align: center;
+  font-family: Yuppy SC;
+  margin-bottom: 10px;
+  padding-top: 80px;
+}
+
+/*-- main_title 終了　--*/
+
+/*-- subtitle 開始　--*/
+
+.subtitle {
+  font-size: 32px;
+  color: #ffff;
+  text-align: center;
+  font-family: 'Noto Sans JP', 'M PLUS 1p', sans-serif;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/*-- subtitle 終了　--*/
+
+/*-- トップ 終了　--*/
+
+.btn_items {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+}
+
+/*-- about 開始　--*/
+
+/*-- about_txt 開始　--*/
+
+.about_txt {
+  font-size: 24px;
+  color: #000000;
+  font-family: 'Noto Sans JP', 'M PLUS 1p', sans-serif;
+  margin-bottom: 40px;
+}
+
+/*-- about_txt 終了　--*/
+
+/*-- about 終了　--*/
+
+/*-- experience 開始　--*/
+
+.experience {
+  background: #e2e2e2;
+  padding: 80px 20px;
+}
+
+.experience_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.experience_txtArea {
+  background: #fff;
+  width: 450px;
+  height: auto;
+  padding: 40px 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.experience_txtArea::after {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-left-color: #fff;
+  border-width: 10px;
+  margin-top: -10px;
+}
+
+/*-- experience_txt 開始　--*/
+
+.experience_txt {
+  font-size: 24px;
+  color: #000000;
+  text-align: left;
+  font-family: 'Noto Sans JP', 'M PLUS 1p', sans-serif;
+}
+
+/*-- experience_txt 終了　--*/
+
+.experience_img {
+  display: inline-block;
+  height: 450px;
+  width: 500px;
+}
+/*-- experience 終了 --*/
+
+/*-- service 開始 --*/
+
+/* カード全体の設定 */
+
+.card__items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 58px;
+}
+
+@media (max-width: 767px) {
+  .card__items {
+    margin-top: 30px;
+  }
+}
+
+/* カード単体の設定 開始 */
+
+.card__item {
+  width: calc(33.33333333% - 30px * 2 / 3);
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+.card__item:nth-child(3n) {
+  margin-right: 0;
+}
+
+@media (max-width: 1087px) {
+  .card__item {
+    width: calc(50% - 24px / 2);
+    margin-right: 24px;
+  }
+  .card__item:nth-child(3n) {
+    margin-right: 24px;
+  }
+  .card__item:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .card__item {
+    width: 100%;
+    margin-right: 0;
+  }
+  .card__item:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+.media {
+  box-shadow: rgba(47, 55, 61, 0.95) 0px 0px 5px 1px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 4px;
+  padding: 16px;
+  display: block;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  min-height:520px;
+}
+
+.media__img {
+  text-align: center;
+}
+
+.media__img img {
+  vertical-align: bottom;
+}
+
+.media__body {
+  padding: 22px 0;
+}
+
+.media__title {
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+  text-align: left;
+  font-family: 'Noto Sans JP', 'M PLUS 1p', sans-serif;
+}
+
+.media__content {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 14px;
+  line-height: 1.5;
+  color: #000000;
+  text-align: left;
+  font-family: 'Noto Sans JP', 'M PLUS 1p', sans-serif;
+}
+
+/*----- モーダルの設定 -----*/
+
+/* モーダル発火時の背景の設定 */
+
+.modal_wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10001;
+  display: none;
+}
+/* モーダル内のインナー（本体） */
+
+.modal_inner {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background: rgba(255, 255, 255, 0.95);
+  position: absolute;
+  width: 60%;
+  height: auto;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+/* モーダルを閉じるボタン */
+
+.modal_close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  right: 0;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* モーダルnai のイメージ */
+
+.modal_img {
+  width: 40%;
+  height: 40%;
+  margin: 0 auto;
+}
+
+/* モーダルのテキスト表示部分 */
+
+.modal_txt_area {
+  width: auto;
+  height: auto;
+  padding: 20px 10px;
+}
+
+
+.support {
+  background-color: #ffff;
+}
+
+.support .catchCopy {
+  font-size: 32px;
+}
+
+.support_img {
+  display: block;
+  margin: 0 auto;
+  width: 600px;
+  height: 600px;
+}

@@ -19,7 +19,7 @@
               <%= link_to 'ユーザー情報の編集', edit_user_path ,class:"user-btn"%>
             </div>
             <div>
-              <%= link_to 'アカウントを削除する', @user, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } ,class:"user-btn"%>
+              <%= link_to 'アカウントを削除', @user, method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } ,class:"user-btn"%>
             </div>
           <% else %>
             <a>表示できません。</a>
