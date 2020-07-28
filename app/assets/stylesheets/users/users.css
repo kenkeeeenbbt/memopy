@@ -62,11 +62,15 @@
   }
   .friends-index-btn{
     width:50%;
+    margin-top:10px;
+  }
+  .user-btn{
+    margin-top:15px;
   }
   .inner {
-    width:100%;
+    width:95%;
     height: 100%;
-    margin:0px;
+    margin:0 auto;
     padding:0px;
   }
   .section_title{
@@ -77,19 +81,64 @@
   }
   .input_items{
     margin-top: 0px;
+    padding:0px;
+    width: 340px;
+    padding: 20px 10px 0px 10px;
   }
   .input_item {
     width: 330px;
     display: flex;
     flex-direction: column;
+    width: 330px;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
-    height: 60px;
+    height: 80px;
   }
   .label_cus {
-    margin-bottom: 6px;
     font-size:14px;
+    width:200px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    line-height: 47px;
   }
   .wrapper{
     height: 300px;
+  }
+  .form_wrapper{
+    width: 350px;
+  }
+  .label_wrapper{
+    width:220px;
+    margin-bottom: 5px;
+    height:36px;
+  }
+  .checkBox_wrapper{
+    margin-top: 0px;
+    width: 280px;
+  }
+  .field{
+    width: 330px;
+  }
+  .input_cus {
+    width: 310px;
+    height: 45px;
+    padding: 0 12px;
+  }
+  .form{
+    height:500px;
+  }
+  .sub-title-responsive{
+    display: none;
+  }
+  .form_top{
+    padding-bottom:5px;
+  }
+  .sub-title{
+    padding-top:5px;
+    letter-spacing: 3px;
+  }
+  .btn_cus{
+    padding:8px 8px;
   }
 }

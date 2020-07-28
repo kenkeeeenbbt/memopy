@@ -7,15 +7,15 @@
         <!-- フォームの上部の部分 -->
         <div class="form_top">
           <h2 class="section_title">新規登録</h2>
-          <h3 class="sub-title">1分で登録完了!<br>Memopyをさっそく始めてみよう！</h3>
+          <h3 class="sub-title sub-title-responsive">1分で登録完了!<br>Memopyをさっそく始めてみよう！</h3>
         </div>
         <!-- フォームのメイン部分 -->
         <div class="input_items">
           <!-- 名前の入力アイテム -->
           <div class="input_item" id="input_item">
             <div class="label_wrapper">
-              <%= f.label :"お名前", class: 'label_cus' %>
               <span class='label_required'>必須</span>
+              <%= f.label :"お名前", class: 'label_cus' %>
             </div>
             <div class="field">
               <div class="fake" id="fake">（例）田中  太郎</div>
@@ -25,8 +25,8 @@
           <!-- メールアドレスの入力アイテム -->
           <div class="input_item">
             <div class="label_wrapper">
-              <%= f.label :"メールアドレス", class: 'label_cus' %>
               <span class='label_required'>必須</span>
+              <%= f.label :"メールアドレス", class: 'label_cus' %>
             </div>
             <div class="field">
               <div class="fake" id="fake">example@memopy.com</div>
@@ -36,8 +36,8 @@
           <!-- パスワードの入力アイテム -->
           <div class="input_item">
             <div class="label_wrapper">
-              <%= f.label :"パスワード", class: 'label_cus' %>
               <span class='label_required'>必須</span>
+              <%= f.label :"パスワード", class: 'label_cus' %>
             </div>
             <div class="field">
               <div class="fake" id="fake">半角英数で入力</div>
@@ -47,8 +47,8 @@
           <!-- パスワード（確認）の入力アイテム -->
           <div class="input_item">
             <div class="label_wrapper">
-              <%= f.label :password_confirmation, "パスワード（確認）", class: 'label_cus' %>
               <span class='label_required'>必須</span>
+              <%= f.label :password_confirmation, "パスワード（確認）", class: 'label_cus' %>
             </div>
             <div class="field">
               <div class="fake" id="fake">パスワードを再入力</div>
