@@ -52,3 +52,44 @@
   opacity: 1;
   transition: 0.5s;
 }
+
+/* スマホサイズレスポンシブ */
+@media (max-width:415px){
+  .friends-show-wrapper{
+    width:100%;
+    text-align: center;
+    min-height: 100%;
+  }
+  .friends-index-btn{
+    width:50%;
+  }
+  .inner {
+    width:100%;
+    height: 100%;
+    margin:0px;
+    padding:0px;
+  }
+  .section_title{
+    margin:0px;
+  }
+  .form_top{
+    margin-bottom:0px;
+  }
+  .input_items{
+    margin-top: 0px;
+  }
+  .input_item {
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    height: 60px;
+  }
+  .label_cus {
+    margin-bottom: 6px;
+    font-size:14px;
+  }
+  .wrapper{
+    height: 300px;
+  }
+}

@@ -1,14 +1,14 @@
 <div class="friends-wrapper">
   <aside id="page-title">
     <% if @friend.user_id == current_user.id %>
-      <h1><%= @friend.name %>のプロフィール</h1>
+      <h1><%= @friend.name %></h1>
     <% else %>
       <a>表示できません。</a>
     <% end %>
     <div class="btn">
-      <%= link_to '名前の編集', edit_friend_path ,class:"name-edit-btn"%>
-      <%= link_to 'リスト追加', new_friends_detail_path ,class:"feature-add-btn"%>
-      <%= link_to '戻る', friends_path ,class:"return-btn" %>
+      <%= link_to '名前の編集', edit_friend_path ,class:"detail-top-btn name-edit-btn"%>
+      <%= link_to 'リスト追加', new_friends_detail_path ,class:"detail-top-btn feature-add-btn"%>
+      <%= link_to '戻る', friends_path ,class:"detail-top-btn return-btn" %>
     </div>
   </aside>
   <%#==========プロフィール詳細情報に関するコード==========%>

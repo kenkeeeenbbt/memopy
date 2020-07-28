@@ -164,7 +164,7 @@ input:focus {
 }
 
 .input_cus {
-  width: calc(100% - 20px);
+  width: calc(80% - 20px);
   height: 45px;
   padding: 0 12px;
   border: 1px solid #ddd;
@@ -399,7 +399,7 @@ input[type="checkbox"]:checked+label:hover .check_span:before {
     width: 330px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 40px;
+    margin: 20px 0px 40px;
     height: 60px;
   }
   /* ラベル */
@@ -428,3 +428,35 @@ input[type="checkbox"]:checked+label:hover .check_span:before {
 }
 
 /* メディアクエリの設定 スマホサイズ 終了*/
+
+@media (max-width: 415px) {
+  .inner{
+    position:fixed;
+    top:0px;
+  }
+  .form_top{
+    padding-bottom:5px;
+  }
+  .sub-title{
+    padding-top:5px;
+    letter-spacing: 3px;
+  }
+  .label_wrapper{
+    width:170px;
+  }
+  .checkBox_wrapper{
+    margin-top: 56px;
+  }
+  .label_cus{
+    width:160px;
+  }
+  .btn_cus{
+    padding:8px 8px;
+  }
+  .input_item{
+    padding-top: 20px;
+  }
+  .input_items{
+    padding:0px;
+  }
+}
