@@ -18,7 +18,7 @@
 
 
 /*　==========リセットCSS========== */
-body{
+html ,body{
   margin:0;
   padding:0;
   min-height: 100vh;
@@ -108,13 +108,6 @@ header nav ul li a:hover{
   transition: 0.5s;
 }
 
-/* 理想は現在いるページリンクを常時hoverのようにする */
-/* header nav ul li a.active{
-  color:#000;
-  background:#fff;
-  transition: 0.5s;
-}  */
-
 .menu-toggle{
   color:#fff;
   float:right;
@@ -124,10 +117,120 @@ header nav ul li a:hover{
   display: none;
 }
 
-/* ==========ハンバーガーメニュー開始==========  */
+/* ==========フッター開始========== */
+footer{
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  background:#524E45;
+  z-index: 10;
+}
+
+footer nav ul{
+  margin:0;
+  padding:0;
+  display: flex;
+  justify-content: center;
+}
+
+footer nav ul li{
+  list-style: none;
+  padding: 16px 32px 0 32px;
+}
+
+footer nav a{
+  color: white;
+  opacity: 0.7;
+  text-decoration:none;
+  font-family: Yuppy SC;
+}
+
+footer nav a:hover{
+  opacity: 1;
+
+}
+footer span p{
+  color:white;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 16px;
+}
+
+/* ==========共通部分レスポンシブ==========  */
+@media (max-width:345px){
+  .user-name{
+    display:none;
+  }
+}
+/* ==========スマホサイズ(IphoneX)=============  */
+@media (max-width:415px){
+  .menu-toggle{
+    display: block;
+  }
+  .fa-bars{
+    margin: 0px 16px 0px;
+  }
+  .user-name{
+    font-size:14px;
+    padding:0px;
+    margin:20px 0px 0px 8px;
+    letter-spacing: 3px;
+  }
+  header .icon{
+    font-size:22px;
+    margin-left: 12px;
+    letter-spacing: 6px;
+  }
+  header nav.active{
+    left:0;
+  }
+  header nav{
+    position: absolute;
+    width:100%;
+    height:calc(100vh-50px);
+    background: #f9ffff;
+    color:rgb(0, 0, 0);
+    top:51px;
+    left:-100%;
+    transition:0.5s;
+  }
+  header nav ul{
+    display:block;
+    text-align:center;
+  }
+  header nav ul li a{
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    color:black;
+  }
+  header nav ul li a:hover{
+    background:#524E45;
+    color: white;
+    transition: 0.3s;
+  }
+  #page-title{
+    padding:0px;
+    padding-top: 16px;
+  };
+  #page-title h1{
+    font-size:28px;
+  }
+  #page-title h2{
+    font-size:18px;
+    margin-bottom:16px;
+  }
+}
+
+/* フッターレスポンシブ */
+@media (max-width:415px){
+  footer{
+    display:none;
+  }
+}
+
+/* ========タブレットサイズ(Ipad)=============  */
 @media (max-width:991px){
   header{
-    padding: 0 20px;
+    padding: 0 10px;
     z-index: 10;
   }
   .menu-toggle{
@@ -161,56 +264,4 @@ header nav ul li a:hover{
   }
 }
 /* ==========ハンバーガーメニュー終了==========  */
-/* ==========ヘッダー終了========== */
-
-/* ==========フッター開始========== */
-footer{
-  position: fixed;
-  bottom: 0;
-  width:100%;
-  background:#524E45;
-z-index: 10;
-}
-
-footer nav ul{
-  margin:0;
-  padding:0;
-  display: flex;
-  justify-content: center;
-}
-
-footer nav ul li{
-  list-style: none;
-  padding: 16px 32px 0 32px;
-}
-
-footer nav a{
-  color: white;
-  opacity: 0.7;
-  text-decoration:none;
-  font-family: Yuppy SC;
-}
-
-footer nav a:hover{
-  opacity: 1;
-
-}
-footer span p{
-  color:white;
-  text-align: center;
-  font-size: 12px;
-  margin-top: 16px;
-}
-
-/* ==========フッターレスポンシブ開始========== */
-@media (max-width:704px){
-  footer nav ul{
-    margin:0;
-    padding:0;
-    display: flex;
-    justify-content: center;
-    flex-wrap:wrap;
-    }
-}
-/* ==========フッターレスポンシブ終了========== */
-/* ==========フッター終了========== */
+/* ==========ヘッダー終了========
